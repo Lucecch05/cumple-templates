@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="description" content="Invitación a mis 30 años - fiesta, música, fotos y confirmación." />
+   <title>Mis 30 Años — Invitación</title>
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet">
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <!-- Bootstrap CDN (CSS) -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-..." crossorigin="anonymous">
+
+   <style>
+      :root {
+         --primario: #5b1274;
+         /* púrpura divertido */
+         --acento: #f0c84a;
+         /* dorado alegre */
+         --fondo: linear-gradient(180deg, #fffdf9 0%, #fff2f7 40%, #fff 100%);
+         --texto: #222;
+         --muted: #666;
+      }
+
+      * {
+         box-sizing: border-box
+      }
+
+      html {
+         scroll-behavior: smooth
+      }
+
+      body {
+         font-family: 'Montserrat', sans-serif;
+         background: var(--fondo);
+         color: var(--texto);
+         margin: 0;
+         line-height: 1.4
+      }
+
+      /* Header / Hero */
+      .hero {
+         position: relative;
+         min-height: 100vh;
+         padding: 0 1.5rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         text-align: center;
+         background-image: radial-gradient(circle at 10% 10%, rgba(107, 31, 106, 0.06), transparent 15%), radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.04), transparent 15%);
+         overflow: visible;
+         color: #fff
+      }
+
+      .hero .subtitle,
+      .hero h1,
+      .hero .btn {
+         color: #fff
+      }
+
+      section {
+         color: #fff
+      }
+
+      @media (max-width:700px) {
+         .hero {
+            min-height: 50vh;
+            padding: 1.5rem 1rem;
+            height: auto;
+            align-items: center;
+            justify-content: center
+         }
+      }
+
+      /* Imagen de fondo: usa la imagen local en /img/fondo1.jpg (formato .jpg). */
+      /* El pseudo-elemento está en position:fixed para que el fondo se mantenga visible mientras bajas (parallax simple).
+       En mobile usamos position:absolute para evitar problemas con background-attachment:fixed en algunos navegadores móviles. */
+      /* Eliminado el pseudo-elemento de hero que duplicaba el fondo y podía causar artefactos en algunos navegadores; ahora usamos solo el background de body para cubrir toda la página */
+      .hero::before {
+         content: none
+      }
+
+      @media (max-width:700px) {
+         .hero::before {
+            position: absolute;
+            opacity: 1;
+            background-size: cover;
+            background-position: center top;
+         }
+      }
+
+      /* Aseguramos que el fondo cubra toda la página (no sólo el hero) y permitimos scroll vertical */
+      html,
+      body {
+         height: auto;
+         min-height: 100%
+      }
+
+      body {
+         background-image: url('img/fondo1.jpg');
+         background-size: cover;
+         background-position: 60% center;
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         min-height: 100vh;
+         overflow-y: auto
+      }
+
+      /* En móviles y pantallas pequeñas usamos scroll y desplazamos el fondo más a la derecha para que las notas no queden cortadas */
+      @media (max-width:900px) {
+         body {
+            background-attachment: scroll;
+            background-position: 30% top
+         }
+
+         .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12))
+         }
+      }
+
+      .hero>* {
+         position: relative;
+         z-index: 2
+      }
+
+      /* Asegurar que el contenedor del hero centre verticalmente su contenido */
+      .hero .container {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         min-height: calc(100vh - 80px)
+      }
+
+      .hero .cta {
+         display: flex;
+         flex-direction: column;
+         gap: 12px;
+         align-items: center
+      }
+
+      .hero-name {
+         display: inline-block;
+         color: var(--acento);
+         font-weight: 700;
+         font-size: clamp(1.5rem, 6vw, 2.6rem);
+         text-transform: none;
+         margin-left: 6px
+      }
+
+      .hero .subtitle {
+         max-width: 760px
+      }
+
+      h1 {
+         font-family: 'Playfair Display', serif;
+         font-size: clamp(1.8rem, 3.6vw, 3rem);
+         margin: 0;
+         color: var(--primario);
+         line-height: 1.05
+      }
+
+      .hero-name {
+         font-size: clamp(1.4rem, 5.2vw, 3rem);
+         letter-spacing: -0.5px
+      }
+
+      .hero-name::after {
+         content: '';
+         display: block;
+         height: 4px;
+         width: 60%;
+         background: linear-gradient(90deg, var(--acento), rgba(212, 175, 55, 0.6));
+         border-radius: 4px;
+         margin-top: 6px
+      }
+
+      .subtitle {
+         margin-top: 0.5rem;
+         color: var(--muted)
+      }
+
+      .hero .cta {
+         margin-top: 1.25rem
+      }
+
+      /* Pequeña animación para el nombre cuando aparece */
+      .hero .aos-animate .hero-name {
+         animation: pulseTitle .9s ease
+      }
+
+      /* Secciones: separación y alternancia */
+      section {
+         padding: 64px 20px;
+         text-align: center
+      }
+
+      section:not(.hero) {
+         max-width: 1100px;
+         margin: 0 auto
+      }
+
+      /* Evitar que las secciones queden tapadas por el hero: darles z-index y un fondo sutil (transparente) para pruebas */
+      section:not(.hero) {
+         margin: 18px 20px;
+         padding: 48px 20px;
+         border-radius: 10px;
+         background: rgba(0, 0, 0, 0.18);
+         position: relative;
+         z-index: 2
+      }
+
+      /* Asegurar que los elementos internos se centran en pantallas grandes */
+      section>* {
+         max-width: 1100px;
+         margin-left: auto;
+         margin-right: auto;
+         width: 100%
+      }
+
+      @media (max-width:700px) {
+         section:not(.hero) {
+            margin: 10px 12px;
+            padding: 28px 12px;
+            border-radius: 8px
+         }
+      }
+
+      /* aseguramos separación con el hero */
+      .hero {
+         z-index: 1
+      }
+
+      /* Countdown */
+      .countdown {
+         display: flex;
+         gap: 12px;
+         justify-content: center;
+         flex-wrap: wrap;
+         margin-top: 1rem
+      }
+
+      .time-box {
+         background: rgba(255, 255, 255, 0.9);
+         padding: 14px 18px;
+         border-radius: 12px;
+         min-width: 65px;
+         box-shadow: 0 6px 18px rgba(80, 30, 100, 0.06);
+         text-align: center
+      }
+
+      .time-box b {
+         display: block;
+         font-size: 1.25rem;
+         color: var(--acento)
+      }
+
+      .time-box small {
+         display: block;
+         color: #111;
+         font-weight: 600;
+         margin-top: 6px
+      }
+
+      @media (max-width:500px) {
+         .time-box {
+            min-width: 50px;
+            padding: 10px 12px;
+         }
+
+         .time-box small {
+            font-size: 0.7rem;
+         }
+      }
+
+      #countdown-section {
+         padding: 3rem 1rem
+      }
+
+      /* Map */
+      .map-wrap {
+         max-width: 1000px;
+         margin: 0 auto;
+         border-radius: 12px;
+         overflow: hidden;
+         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08)
+      }
+
+      .place-info {
+         margin-bottom: 1rem
+      }
+
+      /* Carousel gallery */
+      .carousel {
+         position: relative;
+         max-width: 1000px;
+         margin: 0 auto;
+         padding: 1rem
+      }
+
+      .slides {
+         display: flex;
+         gap: 12px;
+         overflow: hidden;
+         scroll-behavior: smooth
+      }
+
+      .slide {
+         min-width: 100%;
+         flex-shrink: 0;
+         border-radius: 12px;
+         overflow: hidden;
+         position: relative
+      }
+
+      .slide img {
+         width: 100%;
+         height: 450px;
+         object-fit: cover;
+         display: block
+      }
+
+      .carousel .controls {
+         position: absolute;
+         left: 0;
+         right: 0;
+         top: 50%;
+         transform: translateY(-50%);
+         display: flex;
+         justify-content: space-between;
+         padding: 0 1rem
+      }
+
+      .btn-control {
+         background: rgba(255, 255, 255, 0.85);
+         border: none;
+         padding: 10px;
+         border-radius: 50%;
+         cursor: pointer;
+         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08)
+      }
+
+      .dots {
+         display: flex;
+         gap: 8px;
+         justify-content: center;
+         margin-top: .75rem
+      }
+
+      .dot {
+         width: 10px;
+         height: 10px;
+         border-radius: 50%;
+         background: #ddd;
+         cursor: pointer
+      }
+
+      .dot.active {
+         background: var(--primario)
+      }
+
+      /* Extras */
+      .extras {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+         gap: 1rem;
+         max-width: 1000px;
+         margin: 0 auto;
+         padding: 2rem 1rem
+      }
+
+      .card {
+         background: rgba(255, 255, 255, 0.06);
+         padding: 1.25rem;
+         border-radius: 10px;
+         box-shadow: none;
+         text-align: left;
+         backdrop-filter: blur(4px)
+      }
+
+      /* Forzar transparencia de otros elementos que venían con fondo blanco */
+      pre#gift-info {
+         background: transparent !important;
+         box-shadow: none !important;
+         color: var(--texto)
+      }
+
+      footer,
+      .footer-bar {
+         background: transparent !important;
+         border-top: 0 !important;
+         color: rgba(255, 255, 255, 0.95)
+      }
+
+      /* Botones */
+      .btn {
+         display: inline-block;
+         background: var(--primario);
+         color: #fff;
+         padding: 10px 16px;
+         border-radius: 999px;
+         text-decoration: none;
+         font-weight: 600;
+         border: none;
+         cursor: pointer;
+         transition: transform .15s ease, box-shadow .15s ease;
+         box-shadow: 0 8px 20px rgba(75, 10, 110, 0.08)
+      }
+
+      .btn:hover {
+         transform: translateY(-3px);
+         box-shadow: 0 14px 30px rgba(75, 10, 110, 0.12)
+      }
+
+      .btn-primary {
+         background: var(--acento);
+         color: #111
+      }
+
+      /* Music floating button */
+      #music-btn {
+         position: fixed;
+         right: 20px;
+         bottom: 20px;
+         background: var(--primario);
+         color: #fff;
+         border: none;
+         width: 56px;
+         height: 56px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 20px;
+         cursor: pointer;
+         box-shadow: 0 10px 30px rgba(75, 10, 110, 0.2);
+         z-index: 200
+      }
+
+      /* Small responsive tweaks */
+      @media (max-width:700px) {
+         .slide img {
+            height: 320px
+         }
+      }
+
+      footer {
+         padding: 1.5rem;
+         text-align: center;
+         color: var(--muted);
+         font-size: 0.95rem
+      }
+
+      /* Make core containers use Bootstrap responsive defaults when present */
+      .container {
+         max-width: 1140px;
+         margin-left: auto;
+         margin-right: auto;
+         padding-left: 1rem;
+         padding-right: 1rem
+      }
+   </style>
+</head>
+
+<body>
+   <!-- CONFIG: Cambia estas variables si quieres personalizar -->
+   <!-- 1) Fecha del evento: formato ISO -->
+   <!-- 2) Nombre de la cumpleañera (mostrar en hero) -->
+   <!-- 3) Música: pega aquí el ID de YouTube (11 caracteres) o la URL -->
+   <!-- 4) Mapa: embebible (iframe src) -->
+   <!-- 5) Regalo: CBU u otra info que quieras mostrar -->
+   <script>
+      // EDITAR AQUÍ (fáciles de cambiar):
+      window.__EVENT_DATE = '2026-01-17T21:00:00'; // Fecha y hora del evento
+      window.__HOST_NAME = 'Anto'; // Nombre de la cumpleañera
+      window.__MUSIC_URL = 'https://www.youtube.com/watch?v=l0784XtNATU&list=RDl0784XtNATU'; // URL o ID de YouTube (si quieres autoplay al entrar)
+      window.__AUTOPLAY_MUTED = true; // true: intentará autoplay mutado; el usuario podrá activar sonido
+      // EDITA AQUÍ la info para 'Regalo' (CBU, titular, banco). Usa \n para saltos de línea.
+      window.__GIFT_INFO = 'CBU: 0001234567890123456789\nTitular: Anto Ejemplo\nBanco: Banco Ejemplo';
+      // Si tienes un iframe embebible de Maps (como me enviaste), pega solo el URI (src)
+      window.__MAP_EMBED = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.220260971521!2d-65.21003982337326!3d-26.769247987226954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225dee66f03ead%3A0x4c8d19d9f95a2d44!2sC.%2033%20200-102%2C%20T4101%20Taf%C3%AD%20Viejo%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1768354793442!5m2!1ses-419!2sar';
+
+      // Nota: navegadores bloquean autoplay con sonido; usamos mute/autoplay para mejorar probabilidad de reproducción.
+   </script>
+
+   <!-- HERO -->
+   <section class="hero d-flex align-items-center justify-content-center min-vh-100" aria-labelledby="title">
+      <div class="container text-center">
+
+         <div class="hero cta" data-aos="zoom-in">
+            <h1 id="title" data-aos="fade-down" class="mb-2">¡Los 29 de <span id="host-name"
+                  class="hero-name">ANTO</span> 🎉!</h1>
+            <p class="subtitle mb-3" data-aos="fade-up">Se viene un gran diá de fiesta</p>
+            <button id="scroll-to-count" class="btn btn-lg btn-primary" aria-label="Detalles de la Joda">Detalles de la Joda</button>
+         </div>
+      </div>
+   </section>
+
+   <!-- COUNTDOWN -->
+   <section id="countdown-section" aria-labelledby="count-title">
+      <h2 id="count-title" class="section-title" data-icon="⏳" data-aos="fade-up">¡Falta Poco!</h2>
+      <div class="countdown" id="timer" data-aos="zoom-in">
+         <div class="time-box"><b id="days">0</b><small>Días</small></div>
+         <div class="time-box"><b id="hours">0</b><small>Horas</small></div>
+         <div class="time-box"><b id="minutes">0</b><small>Min</small></div>
+         <div class="time-box"><b id="seconds">0</b><small>Seg</small></div>
+      </div>
+   </section>
+
+   <style>
+      /* Títulos de sección con icono antes y animación ligera */
+      .section-title {
+         display: inline-block;
+         font-weight: 700;
+         color: var(--acento);
+         font-size: 1.6rem;
+         margin-bottom: 0.75rem;
+         position: relative
+      }
+
+      .section-title::before {
+         content: attr(data-icon);
+         display: inline-block;
+         margin-right: 10px;
+         font-size: 1.15rem
+      }
+
+      .section-title::after {
+         content: attr(data-icon);
+         display: inline-block;
+         margin-left: 10px;
+         font-size: 1.15rem;
+         opacity: 0.95
+      }
+
+      @keyframes pulseTitle {
+         0% {
+            transform: scale(1)
+         }
+
+         50% {
+            transform: scale(1.06)
+         }
+
+         100% {
+            transform: scale(1)
+         }
+      }
+
+      .section-title.aos-animate {
+         animation: pulseTitle .9s ease
+      }
+   </style>
+
+   <!-- LUGAR -->
+   <section aria-labelledby="where-title" data-aos="fade-right">
+      <h2 id="where-title" class="section-title" data-icon="📍">Ubicación</h2>
+      <p class="place-info">Calle Nº 33, entre 4 y 6, Casa 22, <strong>Las Talitas</strong> </p>
+      <div class="map-wrap" style="margin-bottom:1rem">
+         <!-- Para cambiar la ubicación, edita window.__MAP_QUERY arriba en el bloque de configuración -->
+         <iframe loading="lazy" title="Mapa" width="100%" height="320" style="border:0"
+            referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=" id="map-iframe"></iframe>
+      </div>
+      <a class="btn btn-primary" id="open-maps" target="_blank" rel="noopener">Abrir en Google Maps</a>
+   </section>
+
+   <!-- GALLERY / CAROUSEL -->
+   <section aria-labelledby="gallery-title" data-aos="fade-up">
+      <h2 id="gallery-title" class="section-title" data-icon="📷">Su anfitriona</h2>
+      <div class="carousel" id="carousel">
+         <div class="slides" id="slides">
+            <div class="slide"><img src="foto1.jpg" loading="lazy" alt="Recuerdo 1"></div>
+            <div class="slide"><img src="foto2.jpg" loading="lazy" alt="Recuerdo 2"></div>
+            <div class="slide"><img src="foto3.jpg" loading="lazy" alt="Recuerdo 3"></div>
+            <div class="slide"><img src="foto4.jpg" loading="lazy" alt="Recuerdo 4"></div>
+         </div>
+         <div class="controls">
+            <button class="btn-control" id="prev" aria-label="Anterior">◀</button>
+            <button class="btn-control" id="next" aria-label="Siguiente">▶</button>
+         </div>
+         <div class="dots" id="dots"></div>
+      </div>
+   </section>
+
+   <!-- DRESS CODE -->
+   <!-- <section data-aos="fade-up">
+    <h2 class="section-title" data-icon="👗">Dress Code</h2>
+    <p>Elegant Sport — colores sobrios, destellos dorados permitidos. Evita ropa demasiado informal.</p>
+  </section> -->
+
+   <!-- REGALO -->
+   <section data-aos="fade-up">
+      <h2 class="section-title" data-icon="🎁">Regalo</h2>
+      <p>Obviomente!! Puedes transferirme a mi cuenta:</p>
+      <pre id="gift-info"
+         style="white-space:pre-wrap;background:transparent;border-radius:8px;padding:12px;display:inline-block;text-align:center;box-shadow:none; color: white"> </pre>
+      <p style="margin-top:.5rem;color:var(--   );font-size:.95rem">O si prefieres, también recibo regalos.</p>
+   </section>
+
+   <!-- CONFIRMACIÓN -->
+   <section data-aos="fade-up">
+      <h2 class="section-title" data-icon="✅">Asistencia</h2>
+      <p>Por favor confirma hasta el <strong>16 de Enero</strong>.</p>
+      <p><a class="btn btn-primary" href="https://wa.me/+5493816298057" id="wa-link" target="_blank" rel="noopener">Confirmar
+            por WhatsApp</a></p>
+      <!-- EDITA el enlace anterior: reemplaza TUNUMERO por tu número (ej: 5491123456789) -->
+   </section>
+
+   <!-- FOOTER -->
+   <footer data-aos="fade-up" style="padding:1.5rem 1rem;margin-top:2rem">
+      <p style="margin:0 0 .5rem">¡Gracias! — Te espero con mucho cariño 💫</p>
+   </footer>
+   <div class="footer-bar" role="contentinfo"
+      style="background:transparent;color:#fff;padding:.6rem 1rem;text-align:center;margin-top:10px;border-top:0">
+      <small style="font-size:0.78rem;letter-spacing:.3px">Diseño y desarrollo: <strong>LCF</strong> — © <span
+            id="year">2026</span>. Todos los derechos reservados.</small>
+   </div>
+
+   <!-- Music floating button + hidden player -->
+   <button id="music-btn" title="Música (clic para reproducir/pausar)" aria-label="Música">♪</button>
+   <div id="music-hint" aria-hidden="true">Toca para activar el audio</div>
+   <div id="player-container" style="position:fixed;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;"
+      aria-hidden="true"></div>
+
+   <style>
+      /* Hint sobre música */
+      #music-hint {
+         position: fixed;
+         right: 20px;
+         bottom: 92px;
+         background: var(--acento);
+         color: #111;
+         padding: 8px 12px;
+         border-radius: 999px;
+         font-weight: 600;
+         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+         z-index: 205;
+         opacity: 0;
+         transform: translateY(6px);
+         transition: opacity .35s ease, transform .35s ease
+      }
+
+      #music-hint.show {
+         opacity: 1;
+         transform: translateY(0);
+         animation: hintPulse 1.5s ease infinite
+      }
+
+      @keyframes hintPulse {
+         0% {
+            transform: translateY(0) scale(1)
+         }
+
+         50% {
+            transform: translateY(-6px) scale(1.02)
+         }
+
+         100% {
+            transform: translateY(0) scale(1)
+         }
+      }
+
+      /* Music button states: dark when off, lighter when active */
+      #music-btn {
+         background: rgba(75, 10, 110, 0.95);
+         color: #fff;
+         border: none;
+         width: 58px;
+         height: 58px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 22px;
+         cursor: pointer;
+         box-shadow: 0 12px 30px rgba(75, 10, 110, 0.24);
+         z-index: 200;
+         transition: transform .18s ease, filter .18s ease, background .18s ease
+      }
+
+      #music-btn:hover {
+         transform: translateY(-3px)
+      }
+
+      #music-btn.active {
+         background: var(--acento);
+         color: #111;
+         filter: brightness(1.02)
+      }
+
+      #music-btn.pulse {
+         animation: hintPulse .9s ease infinite
+      }
+
+      #music-btn.loading {
+         opacity: .9;
+         transform: scale(.98);
+         filter: brightness(0.9);
+      }
+
+      /* Ensure hero contents visible above fixed background */
+      .hero>* {
+         position: relative;
+         z-index: 2
+      }
+
+      /* pulsing ring */
+      #music-btn.pulse::after {
+         content: '';
+         position: absolute;
+         right: 14px;
+         bottom: 14px;
+         left: 14px;
+         top: 14px;
+         border-radius: 50%;
+         box-shadow: 0 0 0 rgba(240, 200, 80, 0.9);
+         animation: ring 1.6s ease-out infinite
+      }
+
+      @keyframes ring {
+         0% {
+            box-shadow: 0 0 0 rgba(240, 200, 80, 0.9)
+         }
+
+         70% {
+            box-shadow: 0 0 24px rgba(240, 200, 80, 0.05)
+         }
+
+         100% {
+            box-shadow: 0 0 0 rgba(240, 200, 80, 0)
+         }
+      }
+   </style>
+
+   <!-- Scripts -->
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <!-- Bootstrap JS (Popper + Bootstrap) -->
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-..."
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-..."
+      crossorigin="anonymous"></script>
+   <script>
+      AOS.init({ duration: 800, once: true });
+
+      // Mostrar nombre del anfitrión y año dinámico
+      document.getElementById('host-name').textContent = window.__HOST_NAME || 'Anto';
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Añadir pequeñas defensas si el layout se rompe en pantallas muy anchas (evitar scroll lateral inesperado)
+      (function layoutGuards() { try { document.documentElement.style.overflowX = 'hidden'; document.body.style.overflowX = 'hidden'; } catch (e) { } })();
+
+      // --- COUNTDOWN ---
+      const target = new Date(window.__EVENT_DATE || new Date());
+      function updateCountdown() {
+         const now = new Date();
+         const diff = target - now;
+         if (diff <= 0) { ['days', 'hours', 'minutes', 'seconds'].forEach(id => document.getElementById(id).textContent = '0'); return }
+         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+         const s = Math.floor((diff % (1000 * 60)) / 1000);
+         document.getElementById('days').textContent = d;
+         document.getElementById('hours').textContent = h;
+         document.getElementById('minutes').textContent = m;
+         document.getElementById('seconds').textContent = s;
+      }
+      updateCountdown(); setInterval(updateCountdown, 1000);
+
+      // Inicializar mapa desde la configuración (si hay embed, usarlo; si no, usar query)
+      (function initMap() {
+         try {
+            const iframe = document.getElementById('map-iframe');
+            const embed = (window.__MAP_EMBED || '').trim();
+            if (embed) {
+               iframe && (iframe.src = embed);
+               const openMaps = document.getElementById('open-maps');
+               openMaps && (openMaps.href = 'https://www.google.com/maps/place/?q=' + encodeURIComponent(embed));
+            } else {
+               const q = window.__MAP_QUERY || 'Sal%C3%B3n+Elegance+Calle+Falsa+123';
+               const decoded = decodeURIComponent(q);
+               const src = 'https://maps.google.com/maps?q=' + encodeURIComponent(decoded) + '&output=embed';
+               iframe && (iframe.src = src);
+               const openMaps = document.getElementById('open-maps');
+               openMaps && (openMaps.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(decoded));
+            }
+         } catch (e) { console.warn('Error inicializando mapa', e) }
+      })();
+
+      // Smooth scroll to countdown (reemplaza el enlace con hash para evitar saltos inesperados)
+      const scrollBtn = document.getElementById('scroll-to-count');
+      if (scrollBtn) { scrollBtn.addEventListener('click', () => { const el = document.getElementById('countdown-section'); el && el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); }
+
+      // Poner información de regalo
+      (function initGift() { try { const el = document.getElementById('gift-info'); if (el) { el.textContent = window.__GIFT_INFO || 'CBU: -----\nTitular: -----\nBanco: -----'; } } catch (e) { } })();
+
+      // Estilos: hacer títulos uppercase y sutil movimiento (solo visual)
+      (function styleTitles() { const style = document.createElement('style'); style.textContent = '\n      .section-title{ text-transform:uppercase; text-align:center; letter-spacing:1px; }\n      @keyframes floatY{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}\n      .section-title.aos-animate{animation:floatY 1.2s ease infinite alternate; }\n      @media (max-width:700px){ .hero{padding:3.5rem 1rem 2.5rem} h1{font-size:clamp(1.6rem,7vw,2.4rem)} section{padding:32px 14px} }\n    '; document.head.appendChild(style); })();
+      // --- SIMPLE CAROUSEL (mantener) ---
+      (function () {
+         const slides = document.getElementById('slides');
+         const slideCount = slides.children.length;
+         const dots = document.getElementById('dots');
+         let index = 0, interval = 4000, timer;
+
+         function goTo(n) { index = (n + slideCount) % slideCount; slides.style.transform = 'translateX(' + (-index * 100) + '%)'; updateDots(); }
+         function next() { goTo(index + 1); }
+         function prev() { goTo(index - 1); }
+         function updateDots() { dots.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === index)); }
+
+         for (let i = 0; i < slideCount; i++) { const d = document.createElement('div'); d.className = 'dot'; if (i === 0) d.classList.add('active'); d.addEventListener('click', () => { goTo(i); resetTimer(); }); dots.appendChild(d); }
+         document.getElementById('next').addEventListener('click', () => { next(); resetTimer(); });
+         document.getElementById('prev').addEventListener('click', () => { prev(); resetTimer(); });
+         function startTimer() { timer = setInterval(next, interval); } function resetTimer() { clearInterval(timer); startTimer(); }
+         slides.style.width = (100 * slideCount) + '%'; Array.from(slides.children).forEach(s => s.style.width = (100 / slideCount) + '%');
+         startTimer();
+      })();
+
+      // --- YOUTUBE MUSIC PLAYER (Configurable y autoplay si está definido) ---
+      let ytPlayer = null, ytReady = false, currentVideoId = null;
+
+      function loadYouTubeAPI() { if (window.YT) return Promise.resolve(); return new Promise((res) => { const tag = document.createElement('script'); tag.src = 'https://www.youtube.com/iframe_api'; document.body.appendChild(tag); window.onYouTubeIframeAPIReady = () => { ytReady = true; res(); }; }); }
+
+      let _ytPlayerReadyResolver = null; // internal promise resolver for player ready
+      function createPlayer(videoId, tryPlay) {
+         if (!ytReady) return;
+         const container = document.getElementById('player-container'); container.innerHTML = '<div id="ytplayer"></div>';
+         // Si se quiere autoplay en modo mute, activamos autoplay y mute
+         const autoplayMute = !!window.__AUTOPLAY_MUTED;
+
+         // create a promise that resolves when player is ready
+         const playerReadyPromise = new Promise((resolve) => { _ytPlayerReadyResolver = resolve; });
+
+         ytPlayer = new YT.Player('ytplayer', {
+            height: '0', width: '0', videoId: videoId, playerVars: { playsinline: 1, autoplay: autoplayMute ? 1 : 0, rel: 0 },
+            events: {
+               onReady: function (ev) {
+                  try {
+                     if (autoplayMute) { ev.target.mute(); }
+                     // Si se quiere autoplay, intentar reproducir (puede bloquearse con sonido)
+                     if (autoplayMute || tryPlay) { ev.target.playVideo(); }
+                     // Evitamos establecer icono aquí: el onStateChange actualizará el estado cuando el video realmente cambie
+                     // Evitar que el iframe robe el foco y provoque scroll; además, mover iframe fuera de la ventana
+                     try {
+                        const iframeEl = document.querySelector('#ytplayer iframe');
+                        if (iframeEl) { iframeEl.setAttribute('tabindex', '-1'); iframeEl.setAttribute('aria-hidden', 'true'); iframeEl.style.position = 'fixed'; iframeEl.style.left = '-9999px'; iframeEl.style.top = '0'; iframeEl.style.width = '1px'; iframeEl.style.height = '1px'; }
+                     } catch (e) { }
+                     try { if (typeof window !== 'undefined' && _playerInitScrollY !== null) { window.scrollTo(0, _playerInitScrollY || 0); _playerInitScrollY = null; } } catch (e) { }
+                     // resolve readiness
+                     if (_ytPlayerReadyResolver) { _ytPlayerReadyResolver(ytPlayer); _ytPlayerReadyResolver = null; }
+                  } catch (e) { document.getElementById('music-btn').textContent = '♪'; }
+                  try { document.activeElement && document.activeElement.blur(); } catch (e) { }
+               },
+               onStateChange: function (ev) {
+                  // update button state when player changes
+                  try {
+                     const btn = document.getElementById('music-btn');
+                     const s = ev.data;
+                     if (s === 1) { btn && btn.classList.add('active'); btn && (btn.textContent = '⏸'); }
+                     else if (s === 2 || s === 0) { btn && btn.classList.remove('active'); btn && (btn.textContent = '♪'); }
+                  } catch (e) { }
+               }
+            }
+         });
+         currentVideoId = videoId;
+         return playerReadyPromise;
+      }
+
+      // Añadimos control de mute/unmute y pause/play con el mismo botón
+      let _playerInitScrollY = null;
+      async function ensurePlayer() {
+         if (!ytPlayer) {
+            const raw = (window.__MUSIC_URL || '').trim(); if (!raw) return null; const id = parseYouTubeId(raw); if (!id) return null; _playerInitScrollY = window.scrollY; await loadYouTubeAPI(); const readyPromise = createPlayer(id, !!window.__AUTOPLAY_MUTED); // wait until player reports ready
+            try { await readyPromise; } catch (e) { }
+         } return ytPlayer;
+      }
+
+      // Mostrar hint si hay música configurada
+      (function showHintIfNeeded() { try { const raw = (window.__MUSIC_URL || '').trim(); if (raw) { const h = document.getElementById('music-hint'); h && h.classList.add('show'); setTimeout(() => { h && h.classList.remove('show'); const btn = document.getElementById('music-btn'); btn && btn.classList.remove('pulse'); }, 9000); const btn = document.getElementById('music-btn'); btn && btn.classList.add('pulse'); } } catch (e) { } })();
+
+      document.getElementById('music-btn').addEventListener('click', async () => {
+         try {
+            const h = document.getElementById('music-hint'); h && h.classList.remove('show');
+            const player = await ensurePlayer();
+            const btn = document.getElementById('music-btn');
+            if (!player) { // no hay player: intentamos crear y reproducir
+               // ensurePlayer will create player
+               const p = await ensurePlayer(); if (!p) return; // si falló
+            }
+            const state = player && player.getPlayerState && player.getPlayerState();
+            // If state is playing
+            if (state === 1) {
+               try { player.pauseVideo(); player.mute(); } catch (e) { }
+               btn && (btn.classList.remove('active'), btn.textContent = '♪');
+            } else {
+               try { if (player.isMuted && player.isMuted()) { player.unMute(); } } catch (e) { }
+               try { player.playVideo(); } catch (e) { }
+               btn && (btn.classList.add('active'), btn.textContent = '⏸');
+            }
+            // Restaurar scroll si la creación del player movió la página
+            try { if (_playerInitScrollY !== null) { window.scrollTo(0, _playerInitScrollY); _playerInitScrollY = null; } } catch (e) { }
+         } catch (e) { console.warn(e); }
+      });
+
+      // No registramos auto-unmute global por interacción para evitar efectos secundarios; el usuario debe usar el botón para activar/desactivar el audio.
+
+      // Guard: si la página salta al top inesperadamente poco después de cargar, intentamos restaurar el scroll
+      (function preventJumping() {
+         try {
+            let lastY = window.scrollY || 0; let start = Date.now();
+            window.addEventListener('scroll', () => { lastY = window.scrollY || 0; }, { passive: true });
+            const guardDuration = 12000; // ms
+            const check = setInterval(() => {
+               if (Date.now() - start > guardDuration) { clearInterval(check); return; }
+               if (lastY > 120 && window.scrollY === 0) { window.scrollTo(0, lastY); }
+            }, 400);
+         } catch (e) { console.warn('preventJumping error', e) }
+      })();
+
+      function parseYouTubeId(url) { if (!url) return null; const patterns = [/v=([^&]+)/, /youtu\.be\/([^?&]+)/, /embed\/([^?&]+)/, /\/v\/([^?&]+)/]; for (const p of patterns) { const m = url.match(p); if (m && m[1]) return m[1]; } if (/^[a-zA-Z0-9_-]{11}$/.test(url)) return url; return null; }
+
+      // No hacemos autoplay automático. El reproductor se crea cuando el usuario toca el botón de música para evitar comportamientos inesperados en navegadores (p. ej. scroll o bloqueo de audio).
+
+      // (Manejador de música centralizado más arriba - código simplificado y sin duplicados)
+
+      // Accessibility: tecla Enter activa el botón de música
+      document.getElementById('music-btn').addEventListener('keydown', (e) => { if (e.key === 'Enter') document.getElementById('music-btn').click(); });
+
+   </script>
+</body>
+
+</html>
