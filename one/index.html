@@ -165,6 +165,14 @@
          line-height: 1.05
       }
 
+      #title{
+         font-size: 3.5rem;
+      }
+
+      #title span {
+         font-size: 3.5rem;
+      }
+
       .hero-name {
          font-size: clamp(1.4rem, 5.2vw, 3rem);
          letter-spacing: -0.5px
@@ -481,7 +489,7 @@
       window.__MUSIC_URL = 'https://www.youtube.com/watch?v=l0784XtNATU&list=RDl0784XtNATU'; // URL o ID de YouTube (si quieres autoplay al entrar)
       window.__AUTOPLAY_MUTED = true; // true: intentará autoplay mutado; el usuario podrá activar sonido
       // EDITA AQUÍ la info para 'Regalo' (CBU, titular, banco). Usa \n para saltos de línea.
-      window.__GIFT_INFO = 'CBU: 0001234567890123456789\nTitular: Anto Ejemplo\nBanco: Banco Ejemplo';
+      window.__GIFT_INFO = 'Alias: soyla.cobra.mp\nTitular: Anto Ejemplo\nBanco: Banco Ejemplo';
       // Si tienes un iframe embebible de Maps (como me enviaste), pega solo el URI (src)
       window.__MAP_EMBED = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.220260971521!2d-65.21003982337326!3d-26.769247987226954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225dee66f03ead%3A0x4c8d19d9f95a2d44!2sC.%2033%20200-102%2C%20T4101%20Taf%C3%AD%20Viejo%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1768354793442!5m2!1ses-419!2sar';
 
@@ -493,123 +501,129 @@
       <div class="container text-center">
 
          <div class="hero cta" data-aos="zoom-in">
-            <h1 id="title" data-aos="fade-down" class="mb-2">¡Los 29 de <span id="host-name"
-                  class="hero-name">ANTO</span> 🎉!</h1>
+            <h1 id="title" data-aos="fade-down" class="mb-2">Los 29 de <br>
+               <img width="70px" src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1f389.gif" alt="">
+               <span id="host-name" class="hero-name">ANTO</span>
+                  <img width="70px" src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1f389.gif" alt="" style="transform: rotate(270deg);"></h1>
             <p class="subtitle mb-3" data-aos="fade-up">Se viene un gran diá de fiesta</p>
             <button id="scroll-to-count" class="btn btn-lg btn-primary" aria-label="Detalles de la Joda">Detalles de la Joda</button>
          </div>
       </div>
    </section>
 
-   <!-- COUNTDOWN -->
-   <section id="countdown-section" aria-labelledby="count-title">
-      <h2 id="count-title" class="section-title" data-icon="⏳" data-aos="fade-up">¡Falta Poco!</h2>
-      <div class="countdown" id="timer" data-aos="zoom-in">
-         <div class="time-box"><b id="days">0</b><small>Días</small></div>
-         <div class="time-box"><b id="hours">0</b><small>Horas</small></div>
-         <div class="time-box"><b id="minutes">0</b><small>Min</small></div>
-         <div class="time-box"><b id="seconds">0</b><small>Seg</small></div>
-      </div>
-   </section>
 
-   <style>
-      /* Títulos de sección con icono antes y animación ligera */
-      .section-title {
-         display: inline-block;
-         font-weight: 700;
-         color: var(--acento);
-         font-size: 1.6rem;
-         margin-bottom: 0.75rem;
-         position: relative
-      }
-
-      .section-title::before {
-         content: attr(data-icon);
-         display: inline-block;
-         margin-right: 10px;
-         font-size: 1.15rem
-      }
-
-      .section-title::after {
-         content: attr(data-icon);
-         display: inline-block;
-         margin-left: 10px;
-         font-size: 1.15rem;
-         opacity: 0.95
-      }
-
-      @keyframes pulseTitle {
-         0% {
-            transform: scale(1)
-         }
-
-         50% {
-            transform: scale(1.06)
-         }
-
-         100% {
-            transform: scale(1)
-         }
-      }
-
-      .section-title.aos-animate {
-         animation: pulseTitle .9s ease
-      }
-   </style>
-
-   <!-- LUGAR -->
-   <section aria-labelledby="where-title" data-aos="fade-right">
-      <h2 id="where-title" class="section-title" data-icon="📍">Ubicación</h2>
-      <p class="place-info">Calle Nº 33, entre 4 y 6, Casa 22, <strong>Las Talitas</strong> </p>
-      <div class="map-wrap" style="margin-bottom:1rem">
-         <!-- Para cambiar la ubicación, edita window.__MAP_QUERY arriba en el bloque de configuración -->
-         <iframe loading="lazy" title="Mapa" width="100%" height="320" style="border:0"
-            referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=" id="map-iframe"></iframe>
-      </div>
-      <a class="btn btn-primary" id="open-maps" target="_blank" rel="noopener">Abrir en Google Maps</a>
-   </section>
-
-   <!-- GALLERY / CAROUSEL -->
-   <section aria-labelledby="gallery-title" data-aos="fade-up">
-      <h2 id="gallery-title" class="section-title" data-icon="📷">Su anfitriona</h2>
-      <div class="carousel" id="carousel">
-         <div class="slides" id="slides">
-            <div class="slide"><img src="foto1.jpg" loading="lazy" alt="Recuerdo 1"></div>
-            <div class="slide"><img src="foto2.jpg" loading="lazy" alt="Recuerdo 2"></div>
-            <div class="slide"><img src="foto3.jpg" loading="lazy" alt="Recuerdo 3"></div>
-            <div class="slide"><img src="foto4.jpg" loading="lazy" alt="Recuerdo 4"></div>
+   <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <!-- COUNTDOWN -->
+      <section id="countdown-section" aria-labelledby="count-title">
+         <h2 id="count-title" class="section-title" data-aos="fade-up"><img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/23f0.gif" alt="" width="40px"> ¡Falta Poco! <img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/23f0.gif" alt="" width="40px"></h2>
+         <div class="countdown" id="timer" data-aos="zoom-in">
+            <div class="time-box"><b id="days">0</b><small>Días</small></div>
+            <div class="time-box"><b id="hours">0</b><small>Horas</small></div>
+            <div class="time-box"><b id="minutes">0</b><small>Min</small></div>
+            <div class="time-box"><b id="seconds">0</b><small>Seg</small></div>
          </div>
-         <div class="controls">
-            <button class="btn-control" id="prev" aria-label="Anterior">◀</button>
-            <button class="btn-control" id="next" aria-label="Siguiente">▶</button>
+      </section>
+
+      <style>
+         /* Títulos de sección con icono antes y animación ligera */
+         .section-title {
+            display: inline-block;
+            font-weight: 700;
+            color: var(--acento);
+            font-size: 1.6rem;
+            margin-bottom: 0.75rem;
+            position: relative
+         }
+
+         .section-title::before {
+            content: attr(data-icon);
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 1.15rem
+         }
+
+         .section-title::after {
+            content: attr(data-icon);
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 1.15rem;
+            opacity: 0.95
+         }
+
+         @keyframes pulseTitle {
+            0% {
+               transform: scale(1)
+            }
+
+            50% {
+               transform: scale(1.06)
+            }
+
+            100% {
+               transform: scale(1)
+            }
+         }
+
+         .section-title.aos-animate {
+            animation: pulseTitle .9s ease
+         }
+      </style>
+
+      <!-- LUGAR -->
+      <section aria-labelledby="where-title" data-aos="fade-right">
+         <h2 id="where-title" class="section-title" data-icon="📍">Ubicación</h2>
+         <p class="place-info">Calle Nº 33, entre 4 y 6, Casa 22, <strong>Las Talitas</strong> </p>
+         <div class="map-wrap" style="margin-bottom:1rem">
+            <!-- Para cambiar la ubicación, edita window.__MAP_QUERY arriba en el bloque de configuración -->
+            <iframe loading="lazy" title="Mapa" width="100%" height="320" style="border:0"
+               referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=" id="map-iframe"></iframe>
          </div>
-         <div class="dots" id="dots"></div>
-      </div>
-   </section>
+         <a class="btn btn-primary" id="open-maps" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      </section>
+   
+      <!-- GALLERY / CAROUSEL -->
+      <section aria-labelledby="gallery-title" data-aos="fade-up">
+         <h2 id="gallery-title" class="section-title"><img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1f4f8.gif" width="40px" alt=""> Su anfitriona <img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1f4f8.gif" width="40px" alt=""></h2>
+         <div class="carousel" id="carousel">
+            <div class="slides" id="slides">
+               <div class="slide"><img src="foto1.jpg" loading="lazy" alt="Recuerdo 1"></div>
+               <div class="slide"><img src="foto2.jpg" loading="lazy" alt="Recuerdo 2"></div>
+               <div class="slide"><img src="foto3.jpg" loading="lazy" alt="Recuerdo 3"></div>
+               <div class="slide"><img src="foto4.jpg" loading="lazy" alt="Recuerdo 4"></div>
+            </div>
+            <div class="controls">
+               <button class="btn-control" id="prev" aria-label="Anterior">◀</button>
+               <button class="btn-control" id="next" aria-label="Siguiente">▶</button>
+            </div>
+            <div class="dots" id="dots"></div>
+         </div>
+      </section>
+   
+      <!-- DRESS CODE -->
+      <!-- <section data-aos="fade-up">
+       <h2 class="section-title" data-icon="👗">Dress Code</h2>
+       <p>Elegant Sport — colores sobrios, destellos dorados permitidos. Evita ropa demasiado informal.</p>
+     </section> -->
+   
+      <!-- REGALO -->
+      <section data-aos="fade-up">
+         <h2 class="section-title"> <img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1f381.gif" width="40px" alt=""> Regalo <img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1f381.gif" width="40px" alt=""></h2>
+         <p>¡¡Obvio papi!! <br> Puedes transferirme a mi cuenta:</p>
+         <pre id="gift-info"
+            style="white-space:pre-wrap;background:transparent;border-radius:8px;padding:12px;display:inline-block;text-align:center;box-shadow:none; color: white; font-weight: 600;"> </pre>
+         <p style="margin-top:.5rem;color:var(--   );font-size:.95rem">O si prefieres, también recibo regalos.</p>
+      </section>
+   
+      <!-- CONFIRMACIÓN -->
+      <section data-aos="fade-up">
+         <h2 class="section-title"><img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/2705.gif" width="35px" alt=""> Asistencia <img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/2705.gif" width="35px" alt=""></h2>
+         <p>Por favor confirma hasta el <strong>16 de Enero</strong>.</p>
+         <p><a class="btn btn-primary" href="https://wa.me/+5493816298057" id="wa-link" target="_blank" rel="noopener">Confirmar
+               por WhatsApp</a></p>
+         <!-- EDITA el enlace anterior: reemplaza TUNUMERO por tu número (ej: 5491123456789) -->
+      </section>
+   </div>
 
-   <!-- DRESS CODE -->
-   <!-- <section data-aos="fade-up">
-    <h2 class="section-title" data-icon="👗">Dress Code</h2>
-    <p>Elegant Sport — colores sobrios, destellos dorados permitidos. Evita ropa demasiado informal.</p>
-  </section> -->
-
-   <!-- REGALO -->
-   <section data-aos="fade-up">
-      <h2 class="section-title" data-icon="🎁">Regalo</h2>
-      <p>Obviomente!! Puedes transferirme a mi cuenta:</p>
-      <pre id="gift-info"
-         style="white-space:pre-wrap;background:transparent;border-radius:8px;padding:12px;display:inline-block;text-align:center;box-shadow:none; color: white"> </pre>
-      <p style="margin-top:.5rem;color:var(--   );font-size:.95rem">O si prefieres, también recibo regalos.</p>
-   </section>
-
-   <!-- CONFIRMACIÓN -->
-   <section data-aos="fade-up">
-      <h2 class="section-title" data-icon="✅">Asistencia</h2>
-      <p>Por favor confirma hasta el <strong>16 de Enero</strong>.</p>
-      <p><a class="btn btn-primary" href="https://wa.me/+5493816298057" id="wa-link" target="_blank" rel="noopener">Confirmar
-            por WhatsApp</a></p>
-      <!-- EDITA el enlace anterior: reemplaza TUNUMERO por tu número (ej: 5491123456789) -->
-   </section>
 
    <!-- FOOTER -->
    <footer data-aos="fade-up" style="padding:1.5rem 1rem;margin-top:2rem">
