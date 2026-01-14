@@ -5,7 +5,7 @@
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <meta name="description" content="Invitación a mis 30 años - fiesta, música, fotos y confirmación." />
-   <title>Mis 30 Años — Invitación</title>
+   <title>Anto Party - Mis 29 años</title>
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap"
@@ -14,6 +14,9 @@
    <!-- Bootstrap CDN (CSS) -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-..." crossorigin="anonymous">
+
+   <!-- Agregar favicon -->
+   <link rel="icon" type="image/png" href="https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/512px/1f382.png" />
 
    <style>
       :root {
@@ -785,21 +788,43 @@
       }
       updateCountdown(); setInterval(updateCountdown, 1000);
 
-      // Inicializar mapa desde la configuración (si hay embed, usarlo; si no, usar query)
+      // Inicializar mapa desde la configuración (si hay embed, usarlo; si no, usar query). Mejorar link "Abrir en Google Maps" para usar coordenadas cuando sea posible.
       (function initMap() {
          try {
             const iframe = document.getElementById('map-iframe');
             const embed = (window.__MAP_EMBED || '').trim();
+            const openMaps = document.getElementById('open-maps');
             if (embed) {
+               // set iframe src
                iframe && (iframe.src = embed);
-               const openMaps = document.getElementById('open-maps');
-               openMaps && (openMaps.href = 'https://www.google.com/maps/place/?q=' + encodeURIComponent(embed));
+
+               // Intentar extraer lat/lng del URL embebido (patrones típicos en URLs de Maps)
+               let lat = null, lng = null;
+               const m1 = embed.match(/!3d([\-0-9.]+)!.*!2d([\-0-9.]+)!/);
+               const m2 = embed.match(/!2d([\-0-9.]+)!.*!3d([\-0-9.]+)!/);
+               if (m1) { lat = m1[1]; lng = m1[2]; }
+               else if (m2) { lat = m2[1]; lng = m2[2]; }
+               // Patron alternativo @lat,lng
+               if (!lat || !lng) { const m3 = embed.match(/@([\-0-9.]+),([\-0-9.]+)/); if (m3) { lat = m3[1]; lng = m3[2]; } }
+
+               if (lat && lng) {
+                  openMaps && (openMaps.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(lat + ',' + lng));
+               } else {
+                  // Intentar extraer nombre de lugar codificado (!1s...)
+                  const mName = embed.match(/!1s([^!]+)/);
+                  if (mName && mName[1]) {
+                     const place = decodeURIComponent(mName[1]);
+                     openMaps && (openMaps.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(place));
+                  } else {
+                     // Fallback: usar la propia URL embebida como búsqueda (Maps tratará de interpretarla)
+                     openMaps && (openMaps.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(embed));
+                  }
+               }
             } else {
-               const q = window.__MAP_QUERY || 'Sal%C3%B3n+Elegance+Calle+Falsa+123';
+               const q = window.__MAP_QUERY || 'Salón Elegance Calle Falsa 123';
                const decoded = decodeURIComponent(q);
                const src = 'https://maps.google.com/maps?q=' + encodeURIComponent(decoded) + '&output=embed';
                iframe && (iframe.src = src);
-               const openMaps = document.getElementById('open-maps');
                openMaps && (openMaps.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(decoded));
             }
          } catch (e) { console.warn('Error inicializando mapa', e) }
@@ -899,18 +924,30 @@
       document.getElementById('music-btn').addEventListener('click', async () => {
          try {
             const h = document.getElementById('music-hint'); h && h.classList.remove('show');
-            const player = await ensurePlayer();
+            let player = await ensurePlayer();
             const btn = document.getElementById('music-btn');
             if (!player) { // no hay player: intentamos crear y reproducir
-               // ensurePlayer will create player
-               const p = await ensurePlayer(); if (!p) return; // si falló
+               const p = await ensurePlayer(); if (!p) return; player = p; // si falló
             }
             const state = player && player.getPlayerState && player.getPlayerState();
-            // If state is playing
+            const isMuted = player && (typeof player.isMuted === 'function') ? player.isMuted() : false;
+
+            // Si está reproduciendo pero mutado (autoplay mutado), primer clic debe desmutear y dejarlo sonando
+            if (isMuted) {
+               try { player.unMute(); } catch (e) { }
+               try { player.playVideo(); } catch (e) { }
+               btn && (btn.classList.add('active'), btn.textContent = '⏸');
+               // Restaurar scroll si la creación del player movió la página
+               try { if (_playerInitScrollY !== null) { window.scrollTo(0, _playerInitScrollY); _playerInitScrollY = null; } } catch (e) { }
+               return;
+            }
+
+            // Si está reproduciendo y no está mutado: pausar
             if (state === 1) {
-               try { player.pauseVideo(); player.mute(); } catch (e) { }
+               try { player.pauseVideo(); } catch (e) { }
                btn && (btn.classList.remove('active'), btn.textContent = '♪');
             } else {
+               // Si está en pausa o sin empezar: aseguramos que no esté mute y reproducimos
                try { if (player.isMuted && player.isMuted()) { player.unMute(); } } catch (e) { }
                try { player.playVideo(); } catch (e) { }
                btn && (btn.classList.add('active'), btn.textContent = '⏸');
