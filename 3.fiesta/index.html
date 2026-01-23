@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <title>Party Vibes - Fun &amp; Festive</title>
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet" />
+   <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet" />
+   <script id="tailwind-config">
+      tailwind.config = {
+         darkMode: "class",
+         theme: {
+            extend: {
+               colors: {
+                  "primary": "#ee2b6c",
+                  "secondary": "#4d42f8",
+                  "accent": "#ffbe0b",
+                  "background-light": "#f8f6f6",
+                  "background-dark": "#221016",
+               },
+               fontFamily: {
+                  "display": ["Plus Jakarta Sans"]
+               },
+               borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+            },
+         },
+      }
+   </script>
+   <style type="text/tailwindcss">
+      .polaroid-shadow {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .rotated-left { transform: rotate(-2deg); }
+        .rotated-right { transform: rotate(3deg); }
+        .fun-radio:checked + label {
+            @apply bg-primary text-white border-primary scale-105;
+        }
+        .fun-radio:checked + label .check-icon {
+            @apply opacity-100;
+        }
+    </style>
+</head>
+
+<body
+   class="bg-background-light dark:bg-background-dark font-display text-[#1b0d12] dark:text-white transition-colors duration-300">
+   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <div
+         class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#f3e7eb] dark:border-primary/20">
+         <header class="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-2">
+               <span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+               <h2 class="text-xl font-extrabold tracking-tight">PARTY VIBES</h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+               <a class="text-sm font-bold hover:text-primary transition-colors" href="#vibe">THE VIBE</a>
+               <a class="text-sm font-bold hover:text-primary transition-colors" href="#location">LOCATION</a>
+               <a class="text-sm font-bold hover:text-primary transition-colors" href="#playlist">PLAYLIST</a>
+               <a class="text-sm font-bold hover:text-primary transition-colors" href="#rsvp">RSVP</a>
+               <button
+                  class="bg-primary text-white px-6 py-2 rounded-xl text-sm font-bold hover:scale-105 transition-transform">RSVP
+                  NOW</button>
+            </nav>
+         </header>
+      </div>
+      <section class="max-w-[1200px] mx-auto w-full px-4 py-10 md:py-20">
+         <div
+            class="relative rounded-xl overflow-hidden bg-primary/5 dark:bg-primary/10 border-4 border-dashed border-primary/20 p-8 md:p-16 text-center">
+            <div class="absolute top-4 left-4 opacity-20"><span class="material-symbols-outlined text-6xl">star</span>
+            </div>
+            <div class="absolute bottom-4 right-4 opacity-20"><span
+                  class="material-symbols-outlined text-6xl">auto_awesome</span></div>
+            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-none">
+               LET'S PARTY <br />
+               <span class="text-primary">LIKE IT'S 1999!</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-medium opacity-80">
+               Join us for the ultimate birthday celebration filled with music, signature cocktails, and high-energy
+               vibes.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+               <div
+                  class="flex flex-col items-center bg-white dark:bg-zinc-800 p-6 rounded-xl min-w-[100px] shadow-xl border-b-4 border-primary">
+                  <span class="text-4xl md:text-5xl font-black text-primary">05</span>
+                  <span class="text-xs font-bold uppercase tracking-widest mt-2">Days</span>
+               </div>
+               <div
+                  class="flex flex-col items-center bg-white dark:bg-zinc-800 p-6 rounded-xl min-w-[100px] shadow-xl border-b-4 border-primary">
+                  <span class="text-4xl md:text-5xl font-black text-primary">12</span>
+                  <span class="text-xs font-bold uppercase tracking-widest mt-2">Hours</span>
+               </div>
+               <div
+                  class="flex flex-col items-center bg-white dark:bg-zinc-800 p-6 rounded-xl min-w-[100px] shadow-xl border-b-4 border-primary">
+                  <span class="text-4xl md:text-5xl font-black text-primary">45</span>
+                  <span class="text-xs font-bold uppercase tracking-widest mt-2">Mins</span>
+               </div>
+               <div
+                  class="flex flex-col items-center bg-white dark:bg-zinc-800 p-6 rounded-xl min-w-[100px] shadow-xl border-b-4 border-primary">
+                  <span class="text-4xl md:text-5xl font-black text-primary">30</span>
+                  <span class="text-xs font-bold uppercase tracking-widest mt-2">Secs</span>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="max-w-[1200px] mx-auto w-full px-6 py-16" id="vibe">
+         <div class="flex items-center gap-4 mb-12">
+            <h2 class="text-3xl font-black uppercase italic">The Vibe Check</h2>
+            <div class="h-1 flex-grow bg-primary/20"></div>
+         </div>
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="bg-white p-4 pb-12 polaroid-shadow rotated-left border border-zinc-100">
+               <div class="aspect-square bg-cover bg-center rounded-sm"
+                  data-alt="High energy crowd at a concert with colorful lights"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1X6Qx4c8xa9fPq6_e5NCZu5Ma5C7RZeUIHQyQc1MaEyOKso3zBpqtiVWtklb0f2udw91wZDWTKApvCEM_jIP-kP7m8bUJY-xcbvGLALzokD7DJlrWUI12iwKMNnB5v5RoheTyvry0yU4ztpOKBaRKVodCRLt6jG7_r-ojxBYtygI01Yjka2hH7JnXMI5TrUTVbbImkz5dxM4Ic-e7IPflrHkEJwTojsaogOggcHq8s1ni3_eqr8oxmYt4RvgMXuB7B2q8pXy26g")'>
+               </div>
+               <p class="text-zinc-600 font-bold mt-4 text-center">Energy: 100%</p>
+            </div>
+            <div class="bg-white p-4 pb-12 polaroid-shadow rotated-right border border-zinc-100 mt-8">
+               <div class="aspect-square bg-cover bg-center rounded-sm"
+                  data-alt="Colorful festive decorations and balloons at a party"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC462jUonY54hXuVhp8UfHJTXtTpaCUJheruxCguQmmCQfXo070sOPSjS497HXMdvUJwc7XjYax6gVFoj7Je1Efx1KoK17u8CvHBT7wMn_EPt0yP8CoivtEVJTVGw7PV6FgMSYNusyG6W5MJBtNpCtWoZNHS6rRx825aFnWY5IOq6EcEAKoB-H2UHUXuknUCDFQ9jmqTyTuFrFFlybV0jc8iUqoSbnCHhJwSXpTnJMJK5z-9xWoQy1eIkqbkttXaf8QQ8T96QjDmA")'>
+               </div>
+               <p class="text-zinc-600 font-bold mt-4 text-center">Vibrant Colors</p>
+            </div>
+            <div class="bg-white p-4 pb-12 polaroid-shadow rotated-left border border-zinc-100">
+               <div class="aspect-square bg-cover bg-center rounded-sm"
+                  data-alt="People dancing and having fun under disco lights"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEmXFVsG3cGlHuauTik7prXD-oGSRGspXl2PvvpfOowHmWElKVrJupK-3U4xWrIE8nH1jIgzVecWOC-aQdhaSiKiYi9V-wCxQfOuVI_85ry2v0-UDhNEoYNJWQo5sR9fAnV2jswDV3CBTXxIs6blly6VMQv5Py6tevOb0WCNRuraaZ7Wv0Pqnr6XHVjZ-wd8L4zOzS5u_kwQHx94agVCZqKpxUevgbu3OaKIYr49n_8PfeytEfv8Wkj1UWo3lRtAl81hREM0JTPg")'>
+               </div>
+               <p class="text-zinc-600 font-bold mt-4 text-center">Good Times Only</p>
+            </div>
+            <div class="bg-white p-4 pb-12 polaroid-shadow rotated-right border border-zinc-100 mt-12">
+               <div class="aspect-square bg-cover bg-center rounded-sm"
+                  data-alt="Assorted neon cocktails on a bar counter"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5Qu0oXGVlKl0JsLpkw3PV-p5aN46SlMf4EprIRMBC5Gwtyn4GmfO53fhrhXW41exPf4xQPRM5XJMrJvabCuN8_F13Gd-_R8Ln1UeqTgiUxI-0V3PBIyr5VEgzyzRrjosvlIN0O3qe76QApJ-0jv1OSzjtuWOSTLjF1-dNLkNKy4nkJY-Ex0Qyf93s2-BCS_g_Oc04yVNbw8Al5wOQq1IdHBNRXnGQtbj2UxBQGhbTM8h024WRXhmrhFMMSe-gwYHsEIFha87SrQ")'>
+               </div>
+               <p class="text-zinc-600 font-bold mt-4 text-center">Signature Sips</p>
+            </div>
+         </div>
+      </section>
+      <section class="max-w-[1200px] mx-auto w-full px-6 py-16" id="playlist">
+         <div class="bg-secondary text-white rounded-[2rem] p-8 md:p-16 relative overflow-hidden shadow-2xl">
+            <div class="absolute -right-20 -top-20 opacity-10">
+               <span class="material-symbols-outlined text-[300px]">music_note</span>
+            </div>
+            <div class="relative z-10 flex flex-col md:flex-row gap-12 items-center">
+               <div class="flex-1">
+                  <div
+                     class="inline-block bg-accent text-zinc-900 px-4 py-1 rounded-full font-black text-sm mb-4 uppercase tracking-wider">
+                     Now Requesting</div>
+                  <h2 class="text-4xl md:text-6xl font-black uppercase mb-6 leading-tight">Drop Your <br /><span
+                        class="text-accent italic text-5xl md:text-7xl">Dance Tracks</span></h2>
+                  <p class="text-xl opacity-90 font-medium max-w-md">Our DJ is taking requests! What song is guaranteed
+                     to get you on the dance floor?</p>
+               </div>
+               <div class="w-full md:w-[400px] bg-white rounded-2xl p-6 shadow-xl text-zinc-900">
+                  <div class="flex flex-col gap-4">
+                     <div class="space-y-2">
+                        <label class="font-black uppercase text-xs tracking-widest text-secondary">Song Title</label>
+                        <input
+                           class="w-full border-2 border-zinc-100 rounded-xl px-4 py-3 focus:ring-secondary focus:border-secondary font-bold placeholder:text-zinc-300"
+                           placeholder="e.g. Uptown Funk" type="text" />
+                     </div>
+                     <div class="space-y-2">
+                        <label class="font-black uppercase text-xs tracking-widest text-secondary">Artist</label>
+                        <input
+                           class="w-full border-2 border-zinc-100 rounded-xl px-4 py-3 focus:ring-secondary focus:border-secondary font-bold placeholder:text-zinc-300"
+                           placeholder="e.g. Bruno Mars" type="text" />
+                     </div>
+                     <button
+                        class="w-full bg-secondary text-white font-black py-4 rounded-xl mt-2 flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all active:scale-95 shadow-lg shadow-secondary/20">
+                        <span class="material-symbols-outlined">playlist_add</span>
+                        ADD TO QUEUE
+                     </button>
+                  </div>
+                  <div class="mt-6 pt-6 border-t border-zinc-100">
+                     <p class="text-xs font-bold text-zinc-400 uppercase tracking-tighter mb-3">Recently Requested</p>
+                     <div class="flex flex-col gap-2">
+                        <div class="flex items-center gap-3 bg-zinc-50 p-2 rounded-lg">
+                           <span class="material-symbols-outlined text-secondary">graphic_eq</span>
+                           <span class="text-xs font-bold">Dua Lipa - Levitating</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-zinc-50 p-2 rounded-lg opacity-60">
+                           <span class="material-symbols-outlined text-secondary">graphic_eq</span>
+                           <span class="text-xs font-bold">Queen - Don't Stop Me Now</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="max-w-[1200px] mx-auto w-full px-6 py-16 grid md:grid-cols-2 gap-12" id="location">
+         <div class="flex flex-col gap-6">
+            <h2 class="text-3xl font-black uppercase">Where at?</h2>
+            <div class="bg-zinc-200 dark:bg-zinc-800 h-[350px] rounded-xl relative overflow-hidden">
+               <div class="absolute inset-0 bg-cover bg-center grayscale opacity-50"
+                  data-location="San Francisco, California"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPLJ_nuyriTHImeB5kXURfb_fbpvQU154h4P6A7dBBNOpOPH8CLKao64BCjneKvvc2hAvcBV5B_Qqr79GAGFUpsanidaEoyoJu6wBIxUrLkvjEc4mvH53uY1E2Qn7CnN_3UZN6YKbL5100IhPL9qd4hJkf_AQHW2i0uWPMO4xZOfnheb9qfGR9Izb6-1Iah2tfa6cFEsBmX_npBahUW_6R4E7F4Fc1gEHTQd7h5OT1dP71EI_JkyE-YZsU3G6BkvZtM2hsCU5Hsg")'>
+               </div>
+               <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="flex flex-col items-center">
+                     <span class="material-symbols-outlined text-primary text-6xl drop-shadow-lg">location_on</span>
+                     <div class="bg-white dark:bg-zinc-900 px-4 py-2 rounded-lg shadow-xl mt-2 border border-primary">
+                        <p class="font-bold">The Rooftop Lounge</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flex justify-between items-center">
+               <div>
+                  <p class="font-bold text-lg">The Rooftop Lounge</p>
+                  <p class="opacity-70">123 Party Avenue, San Francisco, CA</p>
+               </div>
+               <button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-bold">
+                  <span class="material-symbols-outlined text-sm">directions</span>
+                  Open Maps
+               </button>
+            </div>
+         </div>
+         <div
+            class="bg-primary text-white rounded-xl p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-8 -top-8 rotate-12 opacity-10">
+               <span class="material-symbols-outlined text-[200px]">apparel</span>
+            </div>
+            <div>
+               <h2 class="text-3xl font-black uppercase mb-4">Dress Code</h2>
+               <p class="text-xl font-bold mb-8">THINK NEON &amp; GLITTER!</p>
+               <div class="grid grid-cols-3 gap-4">
+                  <div class="bg-white/10 p-4 rounded-xl flex flex-col items-center border border-white/20">
+                     <span class="material-symbols-outlined text-3xl mb-2">checkroom</span>
+                     <span class="text-[10px] font-black uppercase">Bright Gear</span>
+                  </div>
+                  <div class="bg-white/10 p-4 rounded-xl flex flex-col items-center border border-white/20">
+                     <span class="material-symbols-outlined text-3xl mb-2">flare</span>
+                     <span class="text-[10px] font-black uppercase">Sparkles</span>
+                  </div>
+                  <div class="bg-white/10 p-4 rounded-xl flex flex-col items-center border border-white/20">
+                     <span class="material-symbols-outlined text-3xl mb-2">theater_comedy</span>
+                     <span class="text-[10px] font-black uppercase">Bold Makeup</span>
+                  </div>
+               </div>
+            </div>
+            <div class="mt-12 bg-white/20 p-4 rounded-xl backdrop-blur-sm">
+               <p class="text-sm font-medium italic italic">"Don't be shy, go all out! Prizes for the most creative
+                  outfit of the night."</p>
+            </div>
+         </div>
+      </section>
+      <section class="max-w-[1200px] mx-auto w-full px-6 py-16" id="rsvp">
+         <div
+            class="bg-white dark:bg-zinc-800 rounded-[2.5rem] p-8 md:p-20 shadow-2xl border-b-8 border-primary relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-bl-full"></div>
+            <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary opacity-10 rounded-tr-full"></div>
+            <div class="max-w-2xl mx-auto text-center mb-12 relative z-10">
+               <h2 class="text-4xl md:text-6xl font-black uppercase mb-4">Are You In?</h2>
+               <p class="text-xl font-medium opacity-60">Let us know if you're coming to the party of the century!</p>
+            </div>
+            <form class="max-w-xl mx-auto relative z-10 flex flex-col gap-8">
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="space-y-2">
+                     <label class="font-black uppercase text-xs tracking-widest text-primary ml-1">Your Name</label>
+                     <input
+                        class="w-full bg-zinc-50 dark:bg-zinc-700/50 border-2 border-transparent focus:border-primary rounded-2xl px-6 py-4 font-bold outline-none transition-all"
+                        placeholder="Full name please!" type="text" />
+                  </div>
+                  <div class="space-y-2">
+                     <label class="font-black uppercase text-xs tracking-widest text-primary ml-1">Plus One?</label>
+                     <input
+                        class="w-full bg-zinc-50 dark:bg-zinc-700/50 border-2 border-transparent focus:border-primary rounded-2xl px-6 py-4 font-bold outline-none transition-all"
+                        max="1" min="0" placeholder="0 or 1" type="number" />
+                  </div>
+               </div>
+               <div class="space-y-4">
+                  <label class="font-black uppercase text-xs tracking-widest text-primary text-center block">Will you be
+                     there?</label>
+                  <div class="grid grid-cols-2 gap-4">
+                     <div class="relative">
+                        <input checked="" class="hidden fun-radio" id="rsvp_yes" name="attendance" type="radio" />
+                        <label
+                           class="flex flex-col items-center justify-center p-6 bg-zinc-50 dark:bg-zinc-700/50 border-2 border-dashed border-zinc-200 dark:border-zinc-600 rounded-3xl cursor-pointer transition-all hover:border-primary active:scale-95 group"
+                           for="rsvp_yes">
+                           <span
+                              class="material-symbols-outlined text-4xl mb-2 group-hover:scale-110 transition-transform">celebration</span>
+                           <span class="font-black uppercase">Count Me In!</span>
+                           <span
+                              class="material-symbols-outlined check-icon absolute top-3 right-3 text-white opacity-0 transition-opacity">check_circle</span>
+                        </label>
+                     </div>
+                     <div class="relative">
+                        <input class="hidden fun-radio" id="rsvp_no" name="attendance" type="radio" />
+                        <label
+                           class="flex flex-col items-center justify-center p-6 bg-zinc-50 dark:bg-zinc-700/50 border-2 border-dashed border-zinc-200 dark:border-zinc-600 rounded-3xl cursor-pointer transition-all hover:border-zinc-400 active:scale-95 group"
+                           for="rsvp_no">
+                           <span
+                              class="material-symbols-outlined text-4xl mb-2 group-hover:scale-110 transition-transform">sentiment_very_dissatisfied</span>
+                           <span class="font-black uppercase">Can't Make It</span>
+                           <span
+                              class="material-symbols-outlined check-icon absolute top-3 right-3 text-white opacity-0 transition-opacity">check_circle</span>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               <div class="space-y-2">
+                  <label class="font-black uppercase text-xs tracking-widest text-primary ml-1">Any Food
+                     Restrictions?</label>
+                  <textarea
+                     class="w-full bg-zinc-50 dark:bg-zinc-700/50 border-2 border-transparent focus:border-primary rounded-2xl px-6 py-4 font-bold outline-none transition-all resize-none"
+                     placeholder="Tell us if you're vegan, gluten-free, etc." rows="3"></textarea>
+               </div>
+               <button
+                  class="w-full bg-primary text-white text-xl font-black py-6 rounded-2xl shadow-xl shadow-primary/30 hover:scale-[1.02] transition-all flex items-center justify-center gap-3">
+                  SUBMIT RSVP
+                  <span class="material-symbols-outlined">send</span>
+               </button>
+            </form>
+         </div>
+      </section>
+      <section class="bg-background-light dark:bg-background-dark/50 py-16" id="menu">
+         <div class="max-w-[1200px] mx-auto px-6">
+            <div class="text-center mb-12">
+               <h2 class="text-4xl font-black uppercase tracking-tighter mb-4">Open Bar &amp; Bites</h2>
+               <p class="max-w-xl mx-auto opacity-70">Sip on our signature blends and enjoy premium snacks all night
+                  long.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+               <div
+                  class="bg-white dark:bg-zinc-800 p-6 rounded-xl border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-start mb-4">
+                     <h3 class="font-black text-xl text-primary">Disco Dazzle</h3>
+                     <span class="material-symbols-outlined">local_bar</span>
+                  </div>
+                  <p class="text-sm opacity-80">Vodka, Blue Curacao, Fresh Lime, and Edible Glitter. Our signature
+                     sparkle sip.</p>
+               </div>
+               <div
+                  class="bg-white dark:bg-zinc-800 p-6 rounded-xl border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-start mb-4">
+                     <h3 class="font-black text-xl text-primary">Neon Nights</h3>
+                     <span class="material-symbols-outlined">wine_bar</span>
+                  </div>
+                  <p class="text-sm opacity-80">Gin, Basil, Elderflower and a touch of Glow. Refreshing and bright.</p>
+               </div>
+               <div
+                  class="bg-white dark:bg-zinc-800 p-6 rounded-xl border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-start mb-4">
+                     <h3 class="font-black text-xl text-primary">Retro Punch</h3>
+                     <span class="material-symbols-outlined">liquor</span>
+                  </div>
+                  <p class="text-sm opacity-80">A massive bowl of secret fruity spirits. Handle with care!</p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="max-w-[1200px] mx-auto w-full px-6 py-16" id="gift">
+         <div class="bg-zinc-900 text-white rounded-3xl p-10 flex flex-col md:flex-row items-center gap-12 shadow-2xl">
+            <div class="flex-1">
+               <h2 class="text-4xl font-black uppercase mb-6">Gifting?</h2>
+               <p class="text-lg opacity-70 mb-8">Your presence is the best gift, but if you'd like to contribute to the
+                  "Dream Holiday Fund", you can do so here!</p>
+               <div class="flex items-center gap-6">
+                  <div class="flex -space-x-4">
+                     <img class="w-12 h-12 rounded-full border-4 border-zinc-900"
+                        data-alt="Profile portrait of a smiling woman"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiXlGLuhdTgAhWrFKs6XSEPhtHZ7yfTR7O-U-2XqYGDKe3q7WA97pQGH1kCI5sxouhRyprxURwtfirm8EdanG6bWjNxLqQgyK7Kf33EvMbtxTkn3Lzh3zD6lSPdiNmKOnxX57mh9t-ThI_46twJHNzQ6pf_3IrBdtOYEL0ZcBL1-DL1MiXEH36OwRWNCaUFOXyqlCiy6M9rZr8DJfKH9dA26LwryHGoLsaMn4mnI3asf9AbZIBCrN79y1v7RZ2f9zUPSc4_n67XQ" />
+                     <img class="w-12 h-12 rounded-full border-4 border-zinc-900"
+                        data-alt="Profile portrait of a man in sunglasses"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtwwc_tjvJ_qQZtzjbOK3LIWSVVtExpsWIKvi997Y5kCCYN_Sejzn_86WwOYd73tYy4cPDZxl5Y5nLJXyfidZZXV3QGKVr_iqtHDOAHtCLS8z2RjCgs5V288xQgenI_8DPmiAF-_1nTXazgbhQaJnaIBhMgFSCW_NTWgqfak3udZBf5bTNAx3IFhaK5Ynxoy2MMqbPFLWXAWaqcLl5lmC1E4Zgt__XUuF6iZM4p_DznxrX5oVAbGMMWwHmBR7XVqaAMDM0_u3kEw" />
+                     <div
+                        class="w-12 h-12 rounded-full border-4 border-zinc-900 bg-primary flex items-center justify-center font-bold text-xs">
+                        +15</div>
+                  </div>
+                  <p class="text-sm font-bold">17 friends already contributed!</p>
+               </div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl flex flex-col items-center gap-4 border-4 border-primary">
+               <div class="w-40 h-40 bg-zinc-100 rounded-lg flex items-center justify-center overflow-hidden">
+                  <div class="w-full h-full p-2 grid grid-cols-4 grid-rows-4 gap-1">
+                     <div class="bg-black"></div>
+                     <div class="bg-black"></div>
+                     <div class="bg-white"></div>
+                     <div class="bg-black"></div>
+                     <div class="bg-black"></div>
+                     <div class="bg-white"></div>
+                     <div class="bg-black"></div>
+                     <div class="bg-black"></div>
+                     <div class="bg-white"></div>
+                     <div class="bg-black"></div>
+                     <div class="bg-black"></div>
+                     <div class="bg-white"></div>
+                     <div class="bg-black"></div>
+                     <div class="bg-black"></div>
+                     <div class="bg-white"></div>
+                     <div class="bg-black"></div>
+                  </div>
+               </div>
+               <p class="text-zinc-900 font-bold text-sm tracking-tight">SCAN TO TRANSFER</p>
+            </div>
+         </div>
+      </section>
+      <footer
+         class="bg-white dark:bg-zinc-900 border-t border-[#f3e7eb] dark:border-primary/20 py-20 overflow-hidden relative">
+         <div class="absolute inset-0 opacity-5 flex flex-wrap justify-center gap-10">
+            <span class="material-symbols-outlined text-9xl">cake</span>
+            <span class="material-symbols-outlined text-9xl">celebration</span>
+            <span class="material-symbols-outlined text-9xl">confirmation_number</span>
+            <span class="material-symbols-outlined text-9xl">music_note</span>
+         </div>
+         <div class="max-w-[800px] mx-auto text-center px-6 relative z-10">
+            <h2 class="text-5xl md:text-6xl font-black mb-8 italic">DON'T MISS OUT!</h2>
+            <p class="text-lg opacity-80 mb-12">Make sure to RSVP by Friday, June 12th. We can't wait to celebrate this
+               milestone with you!</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+               <a class="w-full md:w-auto bg-primary text-white text-xl font-black px-12 py-6 rounded-2xl shadow-xl hover:scale-105 transition-all text-center"
+                  href="#rsvp">
+                  RSVP NOW
+               </a>
+               <button
+                  class="w-full md:w-auto bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white border-2 border-zinc-200 dark:border-zinc-700 text-xl font-black px-12 py-6 rounded-2xl">
+                  ADD TO CALENDAR
+               </button>
+            </div>
+            <div class="mt-20 flex flex-col items-center gap-4 opacity-60">
+               <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">celebration</span>
+                  <span class="font-black tracking-tight">PARTY VIBES 2024</span>
+               </div>
+               <p class="text-xs font-medium uppercase tracking-[0.2em]">Crafted with love for the best birthday ever.
+               </p>
+            </div>
+         </div>
+      </footer>
+      <div class="fixed bottom-6 right-6 md:hidden z-50">
+         <a class="bg-primary text-white size-16 rounded-full shadow-2xl flex items-center justify-center active:scale-95 transition-transform"
+            href="#rsvp">
+            <span class="material-symbols-outlined">event_available</span>
+         </a>
+      </div>
+   </div>
+
+</body>
+
+</html>

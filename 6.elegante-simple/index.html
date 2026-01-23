@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <title>Boho Chic Invitation</title>
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"
+      rel="stylesheet" />
+   <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet" />
+   <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet" />
+   <script id="tailwind-config">
+      tailwind.config = {
+         darkMode: "class",
+         theme: {
+            extend: {
+               colors: {
+                  "primary": "#ec6d13",
+                  "background-light": "#f8f7f6",
+                  "background-dark": "#221810",
+               },
+               fontFamily: {
+                  "display": ["Epilogue", "sans-serif"],
+                  "serif": ["Playfair Display", "serif"]
+               },
+               borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+            },
+         },
+      }
+   </script>
+   <style>
+      body {
+         font-family: 'Epilogue', sans-serif;
+      }
+
+      .boho-heading {
+         font-family: 'Playfair Display', serif;
+      }
+
+      .organic-blob {
+         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+   </style>
+</head>
+
+<body
+   class="bg-background-light dark:bg-background-dark text-[#1b130d] dark:text-[#fcfaf8] transition-colors duration-300">
+   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <!-- Navigation -->
+      <header
+         class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-6 lg:px-40 py-4">
+         <div class="max-w-[1200px] mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2">
+               <span class="material-symbols-outlined text-primary text-3xl">local_florist</span>
+               <h2 class="text-xl font-bold tracking-tight boho-heading">Aria's 30th</h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+               <a class="text-sm font-medium hover:text-primary transition-colors" href="#location">Location</a>
+               <a class="text-sm font-medium hover:text-primary transition-colors" href="#gallery">Gallery</a>
+               <a class="text-sm font-medium hover:text-primary transition-colors" href="#dresscode">Dress Code</a>
+               <button
+                  class="bg-primary text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                  RSVP
+               </button>
+            </nav>
+         </div>
+      </header>
+      <main class="flex-1 flex flex-col items-center">
+         <!-- Hero Section -->
+         <section class="w-full max-w-[1200px] px-6 py-10">
+            <div
+               class="relative overflow-hidden rounded-xl bg-primary/5 p-8 md:p-16 flex flex-col items-center text-center">
+               <!-- Decorative background elements -->
+               <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/10 organic-blob"></div>
+               <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/5 organic-blob"></div>
+               <div class="relative z-10 space-y-6">
+                  <span class="text-primary font-bold tracking-widest uppercase text-xs">You're Invited</span>
+                  <h1 class="boho-heading text-5xl md:text-7xl font-black text-primary leading-tight">A Boho Chic
+                     Celebration</h1>
+                  <p class="max-w-2xl mx-auto text-lg opacity-80 italic">"Wild at heart, sun-kissed soul. Join us for an
+                     evening of magic, music, and memories."</p>
+                  <!-- Hero Image -->
+                  <div class="w-full h-[400px] rounded-xl overflow-hidden shadow-2xl my-8">
+                     <div class="w-full h-full bg-cover bg-center"
+                        data-alt="Warm boho interior with dried flowers and candles"
+                        style='background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0axda_a4Luvx_Ny4A4_rWLxc0TNeDIL_7nm5fVH6V-NPOsKDOOrfdJw39zUSF4gYI1T1fs_kdZpRGyLUKmutSXpwWiofn9YKqG4jBr7r2nUAtcjfvKymzWFILD42svVtf-TxOIDPwdK21ulGxLvIks7OU3hnBazgxUWbXj3fp0h1gQ8n8DWOu52JhRHDghuOSx2QH8cBFrSiJFdMi9xPofBGkMUPOgQJ9CJz9NrwC_3SbhjZ9FHaO0-0udOd2tiHbQWgbtG7I-g");'>
+                     </div>
+                  </div>
+                  <!-- Timer Component -->
+                  <div class="flex gap-4 justify-center py-6">
+                     <div class="flex flex-col items-center gap-2">
+                        <div
+                           class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-2xl bg-white dark:bg-[#322820] shadow-sm border border-primary/10">
+                           <p class="text-primary text-2xl font-bold">14</p>
+                        </div>
+                        <p class="text-[10px] md:text-xs uppercase font-bold tracking-widest opacity-60">Days</p>
+                     </div>
+                     <div class="flex flex-col items-center gap-2">
+                        <div
+                           class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-2xl bg-white dark:bg-[#322820] shadow-sm border border-primary/10">
+                           <p class="text-primary text-2xl font-bold">08</p>
+                        </div>
+                        <p class="text-[10px] md:text-xs uppercase font-bold tracking-widest opacity-60">Hours</p>
+                     </div>
+                     <div class="flex flex-col items-center gap-2">
+                        <div
+                           class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-2xl bg-white dark:bg-[#322820] shadow-sm border border-primary/10">
+                           <p class="text-primary text-2xl font-bold">45</p>
+                        </div>
+                        <p class="text-[10px] md:text-xs uppercase font-bold tracking-widest opacity-60">Mins</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Details Section -->
+         <section class="w-full max-w-[1200px] px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            id="location">
+            <div class="space-y-8">
+               <div class="space-y-2">
+                  <h2 class="boho-heading text-4xl font-bold italic">The Details</h2>
+                  <div class="w-20 h-1 bg-primary rounded-full"></div>
+               </div>
+               <div class="space-y-6">
+                  <div class="flex items-start gap-4">
+                     <div class="p-3 bg-primary/10 rounded-lg text-primary">
+                        <span class="material-symbols-outlined">calendar_month</span>
+                     </div>
+                     <div>
+                        <h4 class="font-bold text-lg">When</h4>
+                        <p class="opacity-70">Saturday, October 14th, 2024</p>
+                        <p class="opacity-70">From 6:00 PM until late</p>
+                     </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                     <div class="p-3 bg-primary/10 rounded-lg text-primary">
+                        <span class="material-symbols-outlined">location_on</span>
+                     </div>
+                     <div>
+                        <h4 class="font-bold text-lg">Where</h4>
+                        <p class="opacity-70">The Glass House Estate</p>
+                        <p class="opacity-70">123 Wildflower Lane, Sedona, AZ</p>
+                        <button class="mt-2 text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+                           Open in Google Maps <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-xl aspect-square lg:aspect-video bg-[#e7d9cf]">
+               <img class="w-full h-full object-cover" data-alt="Aerial view of a rustic estate in the desert"
+                  data-location="Sedona"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwSrHxBY_NLSsgdD21Ex8rMVjIXapWzW_vdKoTtPPeB6jCMllLdye_Hc_naEX0Bf4G7nuOoJSfzJKBQXsJLcFSqg3rWh6xCxK3sCH5cOG9ZYlr0qxlRy9mSRsXc9-QWlwzSyZR_dAdQG46M16gvpr4QgeFgtKo1PlLCneTdH3mGP_crxPTO7Y_5wrl0hOC5XbP6i9tIRe5zURkR_ATdJ7GXXf8keCgp1wa1yAlBQl1bRVt4UAzRh-LxQKnYGfGgrYTYNLvoTCqXQ" />
+            </div>
+         </section>
+         <!-- Gallery Section -->
+         <section class="w-full max-w-[1200px] px-6 py-16" id="gallery">
+            <div class="text-center mb-12">
+               <h2 class="boho-heading text-4xl font-bold mb-4">A Glimpse of Joy</h2>
+               <p class="opacity-60">Capturing the moments that lead us here.</p>
+            </div>
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+               <div class="break-inside-avoid rounded-xl overflow-hidden shadow-md">
+                  <img class="w-full" data-alt="Boho picnic setting with pillows and blankets"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZoHrqEk0pBw3KCgX63BD9MJAS8cyznm3CH4_61tj1jVr17FSX14JLX8g9LO2fVmYAp3s4hmVBKI4s7xzZxjMWFpc5FiWGl-5rlo4TMMVOj-b1YhJon73AqpN1Um5lagJSAFCi6BoYWBlhkLm5nGdZVBI_WbjgIlaEgp_CEU8_PzJ_H1I6_VvLBe2mxFTTE5vsCPZjNRjBR_PEjW58Z3WhgzYli4RH1C4ENYd3Qt8MME3IqX5fLZhkaX9eUmPWi71V_9Po9bVCRA" />
+               </div>
+               <div class="break-inside-avoid rounded-xl overflow-hidden shadow-md">
+                  <img class="w-full" data-alt="Friends laughing at a garden party"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ttnfdkH260sHaST3qKSTTTYI_TRYkuiEtA3StiMHL5dEvhhaWDLyVn11qYBUsfRe5i9DuDvjOI0of98FYI_8zVaZAkm47OKEFczOF3UPMLOxo13B3oR7LphFWpqnD1yP0enltdqP5XhT6OrhgoxPTiqKCVnjM9cNUyJUSoOG9mehTCnsSNnSVZ07r6PQeHqXeOHF6WLX_AOvtDcHob8ksGb0NcJEuurDCY4Y0l0_-srZ_IKirqf5LaVsO4dm-XSPmSYE7kJXyA" />
+               </div>
+               <div class="break-inside-avoid rounded-xl overflow-hidden shadow-md">
+                  <img class="w-full" data-alt="String lights over an outdoor table"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsB3HhTHhq7v98Lt4kyW3sgY8EYUkI-1zljDs3wt3TyWnfPJPF94fZ6_ZzLJXj_VYQluPLIlWotyHsLapXo5y9OgSsu1NgbpgCeEbzReCkLCJYjusvLT3pEKP4mjJN4NaG9J8SQW5Gwko_ui-K7F8yhhjIeuMGw4-eoB5msO5uy5uiLTha9VgSM1BcA5B335LT5dR24Xay7BaPtXKnY7kXHR0aXrfGP9Rvc9gHVxVKtH6C8lk8WVS7tW8WCqEfst6nmz0FQ4U5Ew" />
+               </div>
+               <div class="break-inside-avoid rounded-xl overflow-hidden shadow-md">
+                  <img class="w-full" data-alt="Close up of wildflower bouquet"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA97DCX0RpkLHiz_animpgxrjNfApbnZLyBhxtF8j0fkun1tJaAYUDPaLIg6bYcpmDBoFkc1UqTSJELJRnkt-Hus7S4d3RUfbCaV5Y4Bjp2q7NTYBcZw5Ylp3puprinv8cLmCYNAzX99R2_jl_7ZaW6gIp_CF7TEbtChe3TxIwk_rmys_IXUrXdy6wx1WC0tq_0-GLBTqqvHfWrSVi_PbjnbxqPv6uz8W1Ae2a6j21GOwqi4gtbZ_CQrAXy2PkV-EpI-rVG44neTg" />
+               </div>
+            </div>
+         </section>
+         <!-- Dress Code & Drinks -->
+         <section
+            class="w-full max-w-[1200px] px-6 py-16 bg-primary/5 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-12"
+            id="dresscode">
+            <div class="p-8">
+               <h3 class="boho-heading text-3xl font-bold mb-6">Dress Code</h3>
+               <p class="opacity-80 mb-6">Embrace the earthy vibes. Think linens, florals, and warm tones.</p>
+               <div class="flex gap-4">
+                  <div class="w-12 h-12 rounded-full bg-[#9a6c4c] shadow-inner" title="Terracotta"></div>
+                  <div class="w-12 h-12 rounded-full bg-[#e7d9cf] shadow-inner" title="Sand"></div>
+                  <div class="w-12 h-12 rounded-full bg-[#5d6d4e] shadow-inner" title="Sage"></div>
+                  <div class="w-12 h-12 rounded-full bg-[#ec6d13] shadow-inner" title="Burnt Orange"></div>
+                  <div class="w-12 h-12 rounded-full bg-white shadow-inner" title="Cream"></div>
+               </div>
+            </div>
+            <div class="p-8 border-l border-primary/10">
+               <h3 class="boho-heading text-3xl font-bold mb-6">Drinks Menu</h3>
+               <ul class="space-y-4">
+                  <li class="flex justify-between items-center border-b border-primary/10 pb-2">
+                     <span>Sunset Paloma</span>
+                     <span class="text-xs text-primary font-bold uppercase">Signature</span>
+                  </li>
+                  <li class="flex justify-between items-center border-b border-primary/10 pb-2">
+                     <span>Wildflower Gin &amp; Tonic</span>
+                     <span class="text-xs opacity-50">Botanical</span>
+                  </li>
+                  <li class="flex justify-between items-center border-b border-primary/10 pb-2">
+                     <span>Spiced Cider</span>
+                     <span class="text-xs opacity-50">Warm</span>
+                  </li>
+                  <li class="flex justify-between items-center border-b border-primary/10 pb-2">
+                     <span>Selection of Craft Beers</span>
+                     <span class="text-xs opacity-50">Local</span>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <!-- RSVP & Song Request Section -->
+         <section class="w-full max-w-[800px] px-6 py-20">
+            <div class="bg-white dark:bg-[#2a1f18] rounded-2xl shadow-2xl p-8 md:p-12 border border-primary/5">
+               <div class="text-center mb-10">
+                  <h2 class="boho-heading text-4xl font-bold mb-2">Join the Magic</h2>
+                  <p class="opacity-60">Kindly respond by September 15th</p>
+               </div>
+               <form class="space-y-6">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                     <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider opacity-60">Full Name</label>
+                        <input
+                           class="w-full rounded-xl border-primary/20 bg-background-light dark:bg-[#322820] focus:ring-primary focus:border-primary"
+                           placeholder="Your name" type="text" />
+                     </div>
+                     <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider opacity-60">Attendance</label>
+                        <select
+                           class="w-full rounded-xl border-primary/20 bg-background-light dark:bg-[#322820] focus:ring-primary focus:border-primary">
+                           <option>I'll be there!</option>
+                           <option>Sadly, I can't make it</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="space-y-2">
+                     <label class="text-xs font-bold uppercase tracking-wider opacity-60">Dietary Restrictions</label>
+                     <textarea
+                        class="w-full rounded-xl border-primary/20 bg-background-light dark:bg-[#322820] focus:ring-primary focus:border-primary"
+                        placeholder="Tell us about allergies or preferences" rows="2"></textarea>
+                  </div>
+                  <div class="space-y-2 p-4 bg-primary/5 rounded-xl border border-dashed border-primary/30">
+                     <label class="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">music_note</span> Songs for the DJ
+                     </label>
+                     <input class="w-full bg-transparent border-none focus:ring-0 p-0 placeholder:italic"
+                        placeholder="What song will get you on the dance floor?" type="text" />
+                  </div>
+                  <button
+                     class="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20"
+                     type="submit">
+                     Send RSVP
+                  </button>
+               </form>
+            </div>
+         </section>
+         <!-- Gift / CBU Section -->
+         <section class="w-full max-w-[1200px] px-6 py-16 text-center">
+            <div class="max-w-md mx-auto space-y-6">
+               <span class="material-symbols-outlined text-4xl text-primary/40">redeem</span>
+               <h3 class="boho-heading text-2xl font-bold">Gifts</h3>
+               <p class="opacity-70 text-sm">Your presence is the only gift we need. However, if you wish to contribute
+                  to our honeymoon fund, you can do so below.</p>
+               <div
+                  class="flex items-center gap-2 bg-white dark:bg-[#322820] p-4 rounded-xl border border-primary/10 shadow-sm">
+                  <div class="text-left flex-1">
+                     <p class="text-[10px] font-bold uppercase opacity-50">CBU / Alias</p>
+                     <p class="font-mono text-sm">ARIA.BOHO.CELEBRATION</p>
+                  </div>
+                  <button
+                     class="flex items-center justify-center p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+                     <span class="material-symbols-outlined text-xl">content_copy</span>
+                  </button>
+               </div>
+            </div>
+         </section>
+      </main>
+      <!-- Footer -->
+      <footer class="w-full border-t border-primary/10 py-12 px-6">
+         <div class="max-w-[1200px] mx-auto flex flex-col items-center gap-6">
+            <div class="flex items-center gap-2">
+               <span class="material-symbols-outlined text-primary">local_florist</span>
+               <h2 class="text-lg font-bold boho-heading">Aria's 30th</h2>
+            </div>
+            <div class="flex gap-6 text-sm opacity-50">
+               <a class="hover:text-primary" href="#">Contact</a>
+               <a class="hover:text-primary" href="#">Registry</a>
+               <a class="hover:text-primary" href="#">FAQs</a>
+            </div>
+            <p class="text-[10px] uppercase tracking-widest opacity-30 mt-4">Made with love for the wild hearts</p>
+         </div>
+      </footer>
+   </div>
+</body>
+
+</html>

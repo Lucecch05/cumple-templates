@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <title>Retro Party Invitation</title>
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet" />
+   <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet" />
+   <script id="tailwind-config">
+      tailwind.config = {
+         darkMode: "class",
+         theme: {
+            extend: {
+               colors: {
+                  "primary": "#f425f4",
+                  "background-light": "#f8f5f8",
+                  "background-dark": "#221022",
+                  "accent-cyan": "#00f3ff",
+                  "accent-yellow": "#fff200",
+               },
+               fontFamily: {
+                  "display": ["Space Grotesk", "sans-serif"]
+               },
+               borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+            },
+         },
+      }
+   </script>
+   <style>
+      body {
+         font-family: 'Space Grotesk', sans-serif;
+         background-image: radial-gradient(circle at 2px 2px, rgba(244, 37, 244, 0.1) 1px, transparent 0);
+         background-size: 24px 24px;
+      }
+
+      .retro-glow {
+         text-shadow: 0 0 10px #f425f4, 0 0 20px #f425f4;
+      }
+
+      .neon-border {
+         box-shadow: 0 0 5px #f425f4, inset 0 0 5px #f425f4;
+      }
+
+      .scanline {
+         width: 100%;
+         height: 100%;
+         z-index: 100;
+         background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+         background-size: 100% 4px, 3px 100%;
+         pointer-events: none;
+         position: fixed;
+         top: 0;
+         left: 0;
+      }
+
+      .polaroid-tilt-1 {
+         transform: rotate(-2deg);
+      }
+
+      .polaroid-tilt-2 {
+         transform: rotate(3deg);
+      }
+   </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display min-h-screen">
+   <div class="scanline"></div>
+   <!-- Navigation -->
+   <header class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-md border-b border-primary/30 px-6 py-4">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+         <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-3xl">videogame_asset</span>
+            <h1 class="text-2xl font-black tracking-tighter uppercase text-primary italic retro-glow">RETRO 199X</h1>
+         </div>
+         <nav class="hidden md:flex items-center gap-8 uppercase text-xs font-bold tracking-widest">
+            <a class="hover:text-primary transition-colors" href="#countdown">Countdown</a>
+            <a class="hover:text-primary transition-colors" href="#dress-code">Dress Code</a>
+            <a class="hover:text-primary transition-colors" href="#photo-wall">Gallery</a>
+            <a class="hover:text-primary transition-colors text-primary border border-primary px-4 py-2 rounded"
+               href="#rsvp">RSVP NOW</a>
+         </nav>
+      </div>
+   </header>
+   <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Hero Section -->
+      <section class="py-12 md:py-24">
+         <div class="relative overflow-hidden rounded-xl bg-slate-900 border-2 border-primary/50">
+            <div
+               class="flex min-h-[550px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-8 text-center"
+               data-alt="Neon grid landscape with a glowing synthwave sun"
+               style='background-image: linear-gradient(rgba(34, 16, 34, 0.7) 0%, rgba(34, 16, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZhmr-rASnI1_yi4ykwdxTv51mAfEKIerp8BlpYUC_TnxjY6Inb2QdrD3zYe0AxOfAESd1hmZqfSmttRkGmSNLOazgJ6p8CzJsh89wwma0vI3EexQOfRXDaQtSVJITWzEGioMtXfa-JfXZ5JC52Mx_2t0XvxBZ8RldI5Hqzqw5j3Dw5VS96lDVaLJ0NfTuOe_03UnJPGvp2OrofabBcpLh0KspYouNTsESMXbuUml1hldN1v72oor2kGsxz63DeKR7euNJABGOcQ");'>
+               <div class="flex flex-col gap-4 max-w-3xl">
+                  <div
+                     class="inline-block mx-auto bg-primary text-white text-[10px] font-black uppercase tracking-[0.3em] px-3 py-1 mb-2">
+                     Level up your night</div>
+                  <h1
+                     class="text-white text-5xl md:text-8xl font-black leading-none tracking-tighter uppercase retro-glow">
+                     THE ULTIMATE <br /><span class="text-accent-cyan">RETRO BASH</span>
+                  </h1>
+                  <p class="text-slate-300 text-lg md:text-xl font-medium max-w-xl mx-auto mt-4">
+                     A radical 80s &amp; 90s celebration. Neon lights, pixel art, and pure synthwave vibes await.
+                  </p>
+               </div>
+               <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                  <button
+                     class="bg-primary hover:bg-white hover:text-primary text-white font-black uppercase px-8 py-4 rounded-none transition-all border-2 border-primary tracking-widest text-sm">
+                     CLAIM YOUR SPOT
+                  </button>
+                  <button
+                     class="bg-transparent border-2 border-accent-cyan text-accent-cyan hover:bg-accent-cyan hover:text-black font-black uppercase px-8 py-4 rounded-none transition-all tracking-widest text-sm">
+                     ADD TO CALENDAR
+                  </button>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Countdown Section -->
+      <section class="py-12 border-t border-primary/20" id="countdown">
+         <h2
+            class="text-white text-3xl font-black uppercase tracking-tighter mb-8 text-center italic underline decoration-primary decoration-4 underline-offset-8">
+            The Countdown to Chaos</h2>
+         <div class="flex flex-wrap gap-4 justify-center">
+            <div class="flex flex-col items-center gap-2 w-24 md:w-32">
+               <div
+                  class="w-full h-20 md:h-24 flex items-center justify-center rounded-lg bg-slate-900 border-2 border-primary/40 shadow-[0_0_15px_rgba(244,37,244,0.2)]">
+                  <p class="text-primary text-3xl md:text-5xl font-black tracking-tight">05</p>
+               </div>
+               <p class="text-slate-400 text-xs font-bold uppercase tracking-widest">Days</p>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-24 md:w-32">
+               <div
+                  class="w-full h-20 md:h-24 flex items-center justify-center rounded-lg bg-slate-900 border-2 border-primary/40 shadow-[0_0_15px_rgba(244,37,244,0.2)]">
+                  <p class="text-primary text-3xl md:text-5xl font-black tracking-tight">12</p>
+               </div>
+               <p class="text-slate-400 text-xs font-bold uppercase tracking-widest">Hours</p>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-24 md:w-32">
+               <div
+                  class="w-full h-20 md:h-24 flex items-center justify-center rounded-lg bg-slate-900 border-2 border-primary/40 shadow-[0_0_15px_rgba(244,37,244,0.2)]">
+                  <p class="text-primary text-3xl md:text-5xl font-black tracking-tight">45</p>
+               </div>
+               <p class="text-slate-400 text-xs font-bold uppercase tracking-widest">Minutes</p>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-24 md:w-32">
+               <div
+                  class="w-full h-20 md:h-24 flex items-center justify-center rounded-lg bg-slate-900 border-2 border-primary/40 shadow-[0_0_15px_rgba(244,37,244,0.2)]">
+                  <p class="text-primary text-3xl md:text-5xl font-black tracking-tight">08</p>
+               </div>
+               <p class="text-slate-400 text-xs font-bold uppercase tracking-widest">Seconds</p>
+            </div>
+         </div>
+      </section>
+      <!-- Dress Code Section -->
+      <section class="py-16" id="dress-code">
+         <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+               <h2 class="text-white text-4xl font-black uppercase mb-6 leading-tight italic">Dress Code: <br /><span
+                     class="text-accent-yellow">RADICAL ONLY</span></h2>
+               <p class="text-slate-400 mb-8 text-lg">Dust off your windbreakers and tease that hair. We're going back
+                  to the era of excess. Think bright, think bold, think neon.</p>
+               <ul class="space-y-4">
+                  <li class="flex items-center gap-4 group">
+                     <span
+                        class="material-symbols-outlined text-accent-cyan bg-accent-cyan/10 p-2 rounded">check_circle</span>
+                     <span class="text-white font-bold uppercase tracking-wide">Neon Spandex &amp; Leg Warmers</span>
+                  </li>
+                  <li class="flex items-center gap-4 group">
+                     <span
+                        class="material-symbols-outlined text-accent-cyan bg-accent-cyan/10 p-2 rounded">check_circle</span>
+                     <span class="text-white font-bold uppercase tracking-wide">Vintage Denims &amp; Flannels</span>
+                  </li>
+                  <li class="flex items-center gap-4 group">
+                     <span
+                        class="material-symbols-outlined text-accent-cyan bg-accent-cyan/10 p-2 rounded">check_circle</span>
+                     <span class="text-white font-bold uppercase tracking-wide">High-top Sneakers</span>
+                  </li>
+               </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+               <div class="aspect-square bg-slate-800 rounded-lg p-2 border border-primary/20">
+                  <div class="w-full h-full bg-cover bg-center rounded"
+                     data-alt="Classic colorful 90s windbreaker jacket"
+                     style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCY0h4VoNu42U6xhMuU5vzBnuKyxNDYTOsO7lasRKycUZFjDa_GuzVSaL2Ql6LnpKTPJk_oiU134_0cGFjFVr858nQYaVqqWoIQWKXn9BoC9nbUfd_ZEF_NeFG8QnX_uZoYFsuvI_YsGCiNURA38rJPHR7mWvySLN6F1RsC307CrgowC6ZEn3Z1LIBO9LRphPC5ol0vaENDg9cAIfNX_JoabYeQ6R9YGwFS6ehX-ToPbFybCPfDIx8qBTXVVrJHS1W25ZAZ3kR2EQ')">
+                  </div>
+               </div>
+               <div class="aspect-square bg-slate-800 rounded-lg p-2 border border-accent-cyan/20 translate-y-8">
+                  <div class="w-full h-full bg-cover bg-center rounded" data-alt="80s style shutter shades neon pink"
+                     style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOEB9oI7gpjedZbjF3Wjs4OWj6JuCmtL3WvOFR1IIy48Xz824tCmhNx0Eq-Etwpvhg4pYdg2wOxPncQZFxafzsslvYg16X6wDyCwImDRzn1tUpvjaY7IrmNpU-gm3sNXW3-Sqdwk1YfbkXc3KuOccLIVZLfUDAHrTkjrlTppawEOv-UFEU4kgXBybQB1hBK1G6wfPOr-pSP6h3LROgoA6OqT1nZ1CaBONLBfFa8g8lZLClryPUJR93J_wAIB1LmMrjPm8OQAQb2w')">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- DJ Requests / Jukebox Section -->
+      <section class="py-16">
+         <div
+            class="bg-slate-900 border-4 border-slate-700 rounded-3xl p-8 max-w-4xl mx-auto shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+            <div
+               class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-accent-cyan to-accent-yellow">
+            </div>
+            <div class="flex flex-col items-center mb-10">
+               <div class="bg-black px-6 py-2 border-2 border-primary rounded-full mb-4">
+                  <span class="text-primary text-xs font-black tracking-[0.4em] uppercase">Synthwave Jukebox v2.0</span>
+               </div>
+               <h2 class="text-white text-3xl font-black uppercase text-center">Request Your Retro Jam</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+               <div class="md:col-span-2">
+                  <div class="bg-black/50 p-6 rounded-xl border border-white/10 h-full">
+                     <div class="space-y-4">
+                        <div class="flex flex-col gap-2">
+                           <label class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Artist
+                              Name</label>
+                           <input
+                              class="bg-slate-800 border-slate-700 text-white rounded focus:ring-primary focus:border-primary"
+                              placeholder="e.g. Michael Jackson" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                           <label class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Song
+                              Title</label>
+                           <input
+                              class="bg-slate-800 border-slate-700 text-white rounded focus:ring-primary focus:border-primary"
+                              placeholder="e.g. Billie Jean" type="text" />
+                        </div>
+                        <button
+                           class="w-full bg-accent-cyan text-black font-black uppercase py-4 rounded-none hover:bg-white transition-colors mt-2">INSERT
+                           COIN &amp; REQUEST</button>
+                     </div>
+                  </div>
+               </div>
+               <div class="bg-black/80 p-4 rounded-xl border-l-4 border-accent-yellow">
+                  <p class="text-accent-yellow text-[10px] font-bold uppercase mb-4 tracking-widest">Upcoming Jams</p>
+                  <ul class="text-[11px] font-mono space-y-3">
+                     <li class="text-slate-300">01. BLINDING LIGHTS - THE WEEKND</li>
+                     <li class="text-slate-300">02. TAKE ON ME - A-HA</li>
+                     <li class="text-slate-300">03. GIRLS JUST WANT TO HAVE FUN</li>
+                     <li class="text-slate-300">04. BLUE MONDAY - NEW ORDER</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Photo Wall -->
+      <section class="py-16" id="photo-wall">
+         <h2 class="text-white text-3xl font-black uppercase mb-12 text-center">Memory Lane</h2>
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="bg-white p-3 shadow-xl polaroid-tilt-1 pb-10">
+               <div class="bg-slate-200 aspect-square overflow-hidden mb-4">
+                  <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                     data-alt="Retro cassette player and headphones"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCROPhxZ2ZLNa5jpzwP6Hd1Te_mTdtGvB91BO6U8HtCNdZHpeMXjLN9oTCyer0_776Un85iXWlxw-g3t42BRCWqyvdtURwHPjK8vzkeIq6KBS36YFXp9FZ1WxUy1QlJSIhskj0PAgG4nbJtpou_SpoccmgBMEGktOI-j0L-HyBFXmBxuSawus15d-v8RLvNICvkswxpTWrLryTdUiESk2EkKBpUGRzaz7-dj1EBiVkUfkuJ2a-weKdWvc3q6tBg4DgmBHzZXQ-M6g" />
+               </div>
+               <p class="text-black font-medium text-xs text-center italic">Summer '88 vibes</p>
+            </div>
+            <div class="bg-white p-3 shadow-xl polaroid-tilt-2 pb-10 mt-4">
+               <div class="bg-slate-200 aspect-square overflow-hidden mb-4">
+                  <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                     data-alt="Old bulky desktop computer setup"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbwsnW7vB8_2mVlmEYwYTgrve0st5Ix08d40qM5a2APg3cUmPsxA7MWkPCFJQtjWJ8dejM5rp8O7zyrczRTTSCmQvwXf0oIhERe-gtqDqkdEheri4Hbix709i8gDylQyqnRI7Towqxu70UXw8oI6WxQm4wEeXL3bfAQuiNfgYu1Spp6WsOhecMDAa2v_LdAAYIMg1Ktidly8KftULmsiYafSaFSyfAoq2Qg_kxykzabKFvE9jfrYZLtFPCoq8YetdiAFGoR_qq9Q" />
+               </div>
+               <p class="text-black font-medium text-xs text-center italic">Digital Dreams</p>
+            </div>
+            <div class="bg-white p-3 shadow-xl -rotate-1 pb-10">
+               <div class="bg-slate-200 aspect-square overflow-hidden mb-4">
+                  <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                     data-alt="Neon signs on a street corner"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFxCGdEWHZ56z6sjr-qCZAx6DekDYzghi626ZuuabXLjn9JNqibWaL6Lh8-P2gUfwpJtmPGxgWosOFMK6jB7cF_bQQHWlD-bb3ZxhtGNKPsW2fULPB7jSP_5skYMmnGI627rmc8ElkR8HkslJjmhDkKovNIZbe7cpkL49vl6SYNHp1pCQsiLWbafioFDBxYh1FugbXd3N0ojzUK7o6Z90JD8LRH1KALwik6v_DbaQHqjk_bu984Bcf2VOx30P2K2Ns1JBbtRuueQ" />
+               </div>
+               <p class="text-black font-medium text-xs text-center italic">Midnight Run</p>
+            </div>
+            <div class="bg-white p-3 shadow-xl rotate-2 pb-10 mt-6">
+               <div class="bg-slate-200 aspect-square overflow-hidden mb-4">
+                  <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                     data-alt="DJ spinning vinyl records disco ball"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4RizSbChwuDQcfBvH2GXefVNT0R4_mKvzmoHFnIkZ3vdjffUabBUGdVmAmfrcXhb5TIoYXUOsvhAfacSCEd_g5kIOUBjs093LBaiXMrbyZu11F8hXkE_17HUnsxx4jE9r9Ea2VAwkLlIMMFQ_3g97CcIftwb7PTIZTYt_N9ZKoT3ZHFchdYWkff08lR-jJwZ5u5l4g6WhM1FgAbm62fGzesDeiIHGwbaE_1yyrFdodLQK2LmalZomJaHJ3Ts8n7gtLzQSuEGrtA" />
+               </div>
+               <p class="text-black font-medium text-xs text-center italic">Last Party '99</p>
+            </div>
+         </div>
+      </section>
+      <!-- Location/Map Section -->
+      <section class="py-16">
+         <div
+            class="flex flex-col md:flex-row gap-8 items-center bg-background-dark border-2 border-primary/20 rounded-2xl overflow-hidden p-6">
+            <div class="flex-1 space-y-6">
+               <div>
+                  <span class="text-primary font-black uppercase text-xs tracking-widest">Destination</span>
+                  <h2 class="text-white text-4xl font-black uppercase mt-2">The Grid Arcade</h2>
+                  <p class="text-slate-400 mt-2">128 Bit Lane, Neo Tokyo Sector 7</p>
+               </div>
+               <div class="flex gap-4">
+                  <div class="flex-1 bg-white/5 p-4 rounded-lg border border-white/10">
+                     <span class="material-symbols-outlined text-primary mb-2">directions_car</span>
+                     <p class="text-xs font-bold text-white uppercase mb-1">Valet Parking</p>
+                     <p class="text-[10px] text-slate-500">Available for all Deloreans</p>
+                  </div>
+                  <div class="flex-1 bg-white/5 p-4 rounded-lg border border-white/10">
+                     <span class="material-symbols-outlined text-accent-cyan mb-2">hotel</span>
+                     <p class="text-xs font-bold text-white uppercase mb-1">Nearest Hotel</p>
+                     <p class="text-[10px] text-slate-500">The Neon Suites (2 blocks)</p>
+                  </div>
+               </div>
+               <button
+                  class="flex items-center gap-2 text-white font-black uppercase text-sm border-b-2 border-primary pb-1 hover:text-primary transition-colors">
+                  GET DIRECTIONS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+               </button>
+            </div>
+            <div
+               class="w-full md:w-1/2 aspect-video bg-slate-800 rounded-xl overflow-hidden grayscale contrast-125 border-4 border-slate-700">
+               <div class="w-full h-full bg-cover bg-center" data-alt="Stylized city map with neon pink markers"
+                  data-location="Tokyo"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4C-UtbqlPwOQaHxlmvCGTOG6UNW47aEnbYCBupdqhZCSnQDRCff850YBVGWzFChCRFGPA3gND5G0lCGWbW3NiUcaBLbDFHDuEKjL5zp7tvvGqm2lNULC9Ue0pr50ADT_lxe2AATreS-2lD7KuUZ7QMD80bW6zW9FpGkQYvuG1M98SGHyjeiy_WlK4jQHh3EEqg-n-7wuZZ-IM55iQeSSioNm7WIgTUlnb0Egi3aJ-MNqsX0RZf7bE66mYW4Voeaa_8s7KdtWtKQ')">
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- RSVP Form Section -->
+      <section class="py-24 max-w-2xl mx-auto" id="rsvp">
+         <div class="bg-primary p-1 rounded-lg shadow-[0_0_50px_rgba(244,37,244,0.3)]">
+            <div class="bg-background-dark p-10 rounded-lg">
+               <h2 class="text-white text-4xl font-black uppercase text-center mb-8">Lock In Your Status</h2>
+               <form class="space-y-6">
+                  <div class="grid grid-cols-2 gap-6">
+                     <div class="flex flex-col gap-2">
+                        <label class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">First Name</label>
+                        <input
+                           class="bg-slate-900 border-slate-700 text-white rounded focus:ring-primary focus:border-primary"
+                           type="text" />
+                     </div>
+                     <div class="flex flex-col gap-2">
+                        <label class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Last Name</label>
+                        <input
+                           class="bg-slate-900 border-slate-700 text-white rounded focus:ring-primary focus:border-primary"
+                           type="text" />
+                     </div>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                     <label class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Email Address</label>
+                     <input
+                        class="bg-slate-900 border-slate-700 text-white rounded focus:ring-primary focus:border-primary"
+                        type="email" />
+                  </div>
+                  <div class="flex flex-col gap-2">
+                     <label class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Will you be
+                        attending?</label>
+                     <select
+                        class="bg-slate-900 border-slate-700 text-white rounded focus:ring-primary focus:border-primary uppercase font-bold text-sm">
+                        <option>HELL YES! I'm there.</option>
+                        <option>Maybe, depends on the vibes.</option>
+                        <option>No, I'm a square.</option>
+                     </select>
+                  </div>
+                  <button
+                     class="w-full bg-primary text-white font-black uppercase py-5 text-lg shadow-[0_5px_15px_rgba(244,37,244,0.4)] hover:shadow-[0_0_25px_rgba(244,37,244,0.8)] transition-all"
+                     type="submit">
+                     CONFIRM RSVP
+                  </button>
+               </form>
+            </div>
+         </div>
+      </section>
+   </main>
+   <!-- Footer -->
+   <footer class="bg-slate-950 border-t border-white/5 py-12 px-6 mt-12">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+         <div class="flex items-center gap-3 grayscale">
+            <span class="material-symbols-outlined text-white text-2xl">videogame_asset</span>
+            <span class="text-xl font-black tracking-tighter uppercase text-white italic">RETRO 199X</span>
+         </div>
+         <div class="flex gap-6">
+            <a class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-primary transition-colors"
+               href="#">
+               <span class="material-symbols-outlined text-white">camera_alt</span>
+            </a>
+            <a class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-primary transition-colors"
+               href="#">
+               <span class="material-symbols-outlined text-white">share</span>
+            </a>
+            <a class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-primary transition-colors"
+               href="#">
+               <span class="material-symbols-outlined text-white">music_note</span>
+            </a>
+         </div>
+         <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest">© 1992-2024 RADICAL INVITES CORP.</p>
+      </div>
+   </footer>
+</body>
+
+</html>
