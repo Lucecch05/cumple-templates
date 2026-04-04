@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+   <meta charset="utf-8" />
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <!-- Favicon de 🐉 -->
+   <link rel="icon" type="image/png" href="img/favicon.png" />
+   <title>Giovanni — 6 Años</title>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet" />
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+   <script id="tailwind-config">
+      tailwind.config = {
+         darkMode: "class",
+         theme: {
+            extend: {
+               "colors": {
+                  "background":               "#0d1a0f",
+                  "surface":                  "#0d1a0f",
+                  "surface-dim":              "#0d1a0f",
+                  "surface-container":        "#162619",
+                  "surface-container-low":    "#12201c",
+                  "surface-container-high":   "#1e3022",
+                  "surface-container-lowest": "#091208",
+                  "surface-container-highest":"#2a4030",
+                  "on-surface":               "#d2ebd8",
+                  "on-surface-variant":       "#8db895",
+                  "outline":                  "#4d7a57",
+                  "outline-variant":          "#274030",
+                  "primary":                  "#86efac",
+                  "primary-container":        "#4ade80",
+                  "on-primary":               "#052e16",
+                  "on-primary-container":     "#052e16",
+                  "secondary":                "#a0d4a8",
+                  "secondary-container":      "#1a4225",
+                  "on-secondary":             "#052e16",
+                  "on-secondary-container":   "#bce8c5",
+                  "inverse-surface":          "#d2ebd8",
+                  "inverse-on-surface":       "#162619",
+                  "surface-bright":           "#2a4030",
+               },
+               "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+               },
+               "fontFamily": {
+                  "headline": ["Epilogue"],
+                  "body":     ["Plus Jakarta Sans"],
+                  "label":    ["Space Grotesk"]
+               }
+            }
+         }
+      }
+   </script>
+   <style>
+      html { scroll-behavior: smooth; }
+
+      .material-symbols-outlined {
+         font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+         display: inline-block;
+         vertical-align: middle;
+      }
+
+      /* Textura de escamas de dragón en el fondo */
+      .dragon-texture {
+         background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l20 20-20 20L0 20z' fill='%234ade80' fill-opacity='0.025' fill-rule='evenodd'/%3E%3C/svg%3E");
+      }
+
+      .glass-obsidian {
+         background: rgba(15, 35, 18, 0.7);
+         backdrop-filter: blur(12px);
+      }
+
+      .hero-stat-card {
+         background: rgb(57 92 65 / 16%);
+         backdrop-filter: blur(10px);
+      }
+
+      .dragon-glow {
+         box-shadow: 0 0 24px rgba(74, 222, 128, 0.3);
+      }
+
+      /* Imágenes decorativas de personajes */
+      .char-decoration {
+         pointer-events: none;
+         user-select: none;
+      }
+
+      /* ---- Carousel ---- */
+      .carousel-track {
+         display: flex;
+         transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+      }
+      .carousel-slide {
+         min-width: 100%;
+         flex-shrink: 0;
+      }
+
+      .carousel-media {
+         width: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background:
+            radial-gradient(circle at top, rgba(134, 239, 172, 0.18), transparent 35%),
+            linear-gradient(180deg, rgba(15, 35, 18, 0.95), rgba(9, 18, 8, 0.98));
+      }
+
+      .carousel-media img {
+         display: block;
+         width: 100%;
+      }
+
+      .carousel-media--horizontal {
+         min-height: 320px;
+         height: clamp(320px, 48vw, 520px);
+      }
+
+      .carousel-media--horizontal img {
+         height: 100%;
+         object-fit: cover;
+      }
+
+      .carousel-media--vertical {
+         min-height: 380px;
+         height: clamp(380px, 60vw, 640px);
+         padding: 20px;
+      }
+
+      .carousel-media--vertical img {
+         height: 100%;
+         width: auto;
+         max-width: 100%;
+         object-fit: contain;
+         border-radius: 8px;
+         box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      }
+
+      /* ---- Countdown boxes ---- */
+      .countdown-box {
+         background: rgba(15, 35, 18, 0.75);
+         backdrop-filter: blur(10px);
+         border: 1px solid rgba(74, 222, 128, 0.2);
+      }
+      @keyframes pulse-num {
+         0%, 100% { transform: scale(1); }
+         50%       { transform: scale(1.06); }
+      }
+      .countdown-box.tick { animation: pulse-num 0.15s ease; }
+
+      /* ---- Botón de música flotante ----  */
+      #music-btn {
+         position: fixed;
+         right: 20px; bottom: 20px;
+         background: #4ade80;
+         color: #052e16;
+         border: none;
+         width: 56px; height: 56px;
+         border-radius: 50%;
+         display: flex; align-items: center; justify-content: center;
+         font-size: 22px;
+         cursor: pointer;
+         box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+         z-index: 200;
+         transition: transform 0.2s;
+      }
+      #music-btn:hover  { transform: scale(1.1); }
+      #music-btn.active { background: #166534; color: #4ade80; }
+
+      #music-hint {
+         position: fixed;
+         right: 88px; bottom: 28px;
+         background: rgba(15, 35, 18, 0.95);
+         color: #d2ebd8;
+         padding: 8px 16px;
+         border-radius: 8px;
+         font-size: 13px;
+         font-family: 'Space Grotesk', sans-serif;
+         border: 1px solid rgba(74, 222, 128, 0.25);
+         opacity: 0;
+         pointer-events: none;
+         transition: opacity 0.4s;
+         z-index: 199;
+         white-space: nowrap;
+      }
+      #music-hint.show { opacity: 1; }
+
+      @keyframes pulse-btn {
+         0%, 100% { box-shadow: 0 0 20px rgba(74, 222, 128, 0.4); }
+         50%       { box-shadow: 0 0 40px rgba(74, 222, 128, 0.85); }
+      }
+      #music-btn.pulse { animation: pulse-btn 1.5s ease infinite; }
+
+      .hero-bg-image {
+         object-position: center center;
+         transform: scale(1.02);
+      }
+
+      .hero-character {
+         width: 360px;
+      }
+
+      .countdown-character {
+         width: 200px;
+         opacity: 0.65;
+         transform: translateY(-50%) scaleX(-1);
+      }
+
+      .map-character {
+         width: 130px;
+         opacity: 0.7;
+         top: 0;
+      }
+
+      @media (max-width: 1023px) {
+         .hero-character {
+            width: 190px;
+            right: -30px;
+            bottom: 24px;
+            opacity: 0.5;
+         }
+
+         .countdown-character {
+            width: 120px;
+            left: -34px;
+            top: auto;
+            bottom: 18px;
+            opacity: 0.2;
+            transform: scaleX(-1);
+         }
+
+         .map-character {
+            width: 105px;
+            right: 8px;
+            top: auto;
+            bottom: -16px;
+            opacity: 0.75;
+         }
+      }
+
+      @media (max-width: 767px) {
+         .hero-bg-image {
+            object-position: 64% center;
+            transform: scale(1.12);
+         }
+
+         #hero {
+            min-height: 100svh;
+            align-items: flex-start;
+            padding-top: 88px;
+         }
+
+         #hero .relative.z-10 {
+            padding-bottom: 160px;
+         }
+
+         .carousel-media--horizontal {
+            height: 300px;
+         }
+
+         .carousel-media--vertical {
+            height: 440px;
+            padding: 14px;
+         }
+      }
+
+      @media (min-width: 1200px) {
+         .map-character {
+            top: 110px;
+         }
+      }
+   </style>
+</head>
+
+<body class="bg-background text-on-surface font-body overflow-x-hidden dragon-texture">
+
+   <!-- ══════════════════════════════════════════
+        CONFIGURACIÓN — Solo editar esta sección
+        ══════════════════════════════════════════ -->
+   <script>
+      // ================================================
+      //  CONFIGURACIÓN DEL EVENTO — Editá estas líneas
+      // ================================================
+      window.__HOST_NAME        = 'Giovanni';                    // Nombre del cumpleañero
+      window.__AGE              = '6';                          // Edad que cumple
+      window.__EVENT_DATE       = '2026-04-19T19:00:00';        // Fecha y hora ISO del evento
+      window.__EVENT_DATE_TEXT  = 'Sábado 19 de Abril de 2026'; // Texto visible de la fecha
+      window.__EVENT_TIME       = '19:00 — 23:00 hs';          // Horario del evento
+      window.__EVENT_ADDRESS    = 'Javucho Kids — Colombia 2445'; // Dirección del salón
+      window.__EVENT_DIRECTIONS = 'Entre calles Castelli y C. Cornelio Saavedra. Altura Av. Ejercito del Norte 1800'; // Indicaciones
+      window.__MUSIC_URL        = '';                           // URL o ID de YouTube (vacío = sin música)
+      window.__ENABLE_MUSIC     = false;                        // false = oculta el botón flotante de música
+      window.__AUTOPLAY_MUTED   = false;                        // true → intenta autoplay mutado al cargar
+      window.__GIFT_INFO        = 'CBU: -----\nAlias: -----\nTitular: -----\nBanco: -----'; // Datos para transferir
+      
+      window.__MAP_EMBED        = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d568.6099157804498!2d-65.228290175945!3d-26.800401810034362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d73177e33cf%3A0x59143ba99b678d!2sLa%20Colombia%20Eventos!5e0!3m2!1ses-419!2sar!4v1775325821310!5m2!1ses-419!2sar';                           // Pegar aquí el "src" del iframe de Google Maps
+      window.__MAP_LINK         = 'https://maps.app.goo.gl/uygHW7cg9nd2A8U68';   // Link directo a Google Maps
+      window.__WHATSAPP_LINK    = 'https://wa.me/5493816298057?text=Hola%20quiero%20confirmar%20la%20asistencia%20al%20cumple%20de%20Giovanni'; // Link de confirmación por WhatsApp
+      // Fotos del cumpleañero — rutas relativas o URLs completas
+      window.__PHOTOS = [
+         { src: 'img/carrousel/1.jpeg', orientation: 'vertical' },
+         { src: 'img/carrousel/2.jpeg', orientation: 'vertical' },
+         { src: 'img/carrousel/3.jpeg', orientation: 'vertical' },
+         { src: 'img/carrousel/4.jpeg', orientation: 'horizontal' },
+      ];
+   </script>
+
+   <!-- Botón de música flotante -->
+   <button id="music-btn" aria-label="Reproducir música" title="Música">♪</button>
+   <div id="music-hint">🎵 ¡Tocá para escuchar la playlist!</div>
+   <div id="player-container" style="display:none"></div>
+
+   <!-- ══════════════════════════════════════════
+        BARRA DE NAVEGACIÓN
+        ══════════════════════════════════════════ -->
+   <nav class="fixed top-0 w-full z-50 bg-zinc-950/85 backdrop-blur-xl border-b border-white/5"
+      style="box-shadow: 0 0 20px rgba(74,222,128,0.08)">
+      <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+         <div class="text-xl font-black text-green-400 italic font-headline tracking-tight" id="nav-title">
+            🐉 Cumple de Giovanni
+         </div>
+         <div class="hidden md:flex gap-7 items-center">
+            <a class="text-green-400 font-bold border-b-2 border-green-400 pb-1 font-headline tracking-tight transition-all"
+               href="#hero">Inicio</a>
+            <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline tracking-tight"
+               href="#countdown">Cuenta Regresiva</a>
+            <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline tracking-tight"
+               href="#photos">Fotos</a>
+            <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline tracking-tight"
+               href="#map">Mapa</a>
+            <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline tracking-tight"
+               href="#rsvp">Confirmar</a>
+            <a href="#" id="nav-whatsapp-link" target="_blank"
+               class="bg-primary-container text-on-primary-container px-6 py-2 font-bold dragon-glow active:scale-95 duration-200 transition-all no-underline">
+               ✅ CONFIRMAR
+            </a>
+         </div>
+         <!-- Menú mobile -->
+         <button class="md:hidden text-primary-container" id="mobile-menu-btn" aria-label="Menú">
+            <span class="material-symbols-outlined">menu</span>
+         </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col gap-3">
+         <a class="text-green-400 font-bold font-headline" href="#hero"
+            onclick="closeMobileMenu()">Inicio</a>
+         <a class="text-zinc-300 font-headline" href="#countdown"
+            onclick="closeMobileMenu()">Cuenta Regresiva</a>
+         <a class="text-zinc-300 font-headline" href="#photos"
+            onclick="closeMobileMenu()">Fotos</a>
+         <a class="text-zinc-300 font-headline" href="#map"
+            onclick="closeMobileMenu()">Mapa</a>
+         <a class="text-zinc-300 font-headline" href="#rsvp"
+            onclick="closeMobileMenu()">Confirmar</a>
+      </div>
+   </nav>
+
+   <!-- ══════════════════════════════════════════
+        HERO
+        ══════════════════════════════════════════ -->
+   <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden" id="hero">
+      <!-- Fondo de imagen -->
+      <div class="absolute inset-0 z-0">
+         <img class="w-full h-full object-cover opacity-55 hero-bg-image" src="img/fondo.jpg"
+            alt="Cómo Entrenar a tu Dragón — fondo" />
+         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/45 to-background"></div>
+      </div>
+
+      <!-- Personaje decorativo derecha (Chimuelo) -->
+      <div class="absolute right-0 bottom-0 z-[5] char-decoration block hero-character">
+         <img src="img/1.png" alt="Chimuelo"
+            style="width:100%; object-fit:contain; filter: drop-shadow(0 0 40px rgba(74,222,128,0.35))" />
+      </div>
+
+      <!-- Contenido principal -->
+      <div class="relative z-10 text-center px-6 max-w-5xl w-full">
+         <div
+            class="inline-block px-4 py-1 mb-6 bg-secondary-container text-on-secondary-container font-label text-xs tracking-[0.2em] uppercase"
+            style="border-radius: 999px">
+            🏝️ La Isla de Berk te invita
+         </div>
+
+         <h1 class="font-headline text-6xl md:text-8xl font-black mb-4 tracking-tighter text-on-surface drop-shadow-lg"
+            id="hero-heading">
+            CUMPLE 6 <span class="text-primary-container italic block md:inline" id="hero-name">Giovanni</span>
+         </h1>
+
+         <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed">
+            ¡Montá tu dragón! Los Campos de Entrenamiento están abiertos para una celebración legendaria.
+            Sumate a <strong>Chimuelo</strong> y al equipo para un vuelo épico. 🐉
+         </p>
+
+         <!-- Tarjetas de info -->
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+            <div class="p-6 hero-stat-card border border-outline-variant/25"
+               style="border-radius:6px">
+               <span class="material-symbols-outlined text-primary-container mb-2 text-3xl">calendar_today</span>
+               <p class="font-label text-sm text-primary-container uppercase tracking-widest mt-1">Fecha</p>
+               <p class="text-lg font-bold mt-1" id="card-date">Domingo, 19 de Abril</p>
+            </div>
+            <div class="p-6 hero-stat-card border border-outline-variant/25"
+               style="border-radius:6px">
+               <span class="material-symbols-outlined text-primary-container mb-2 text-3xl">schedule</span>
+               <p class="font-label text-sm text-primary-container uppercase tracking-widest mt-1">Horario del Vuelo</p>
+               <p class="text-lg font-bold mt-1" id="card-time">18:00 — 21:00 hs</p>
+            </div>
+            <div class="p-6 hero-stat-card border border-outline-variant/25"
+               style="border-radius:6px">
+               <span class="material-symbols-outlined text-primary-container mb-2 text-3xl">explore</span>
+               <p class="font-label text-sm text-primary-container uppercase tracking-widest mt-1">Campamento Base</p>
+               <p class="text-lg font-bold mt-1" id="card-address">El Gran Salón <strong>Javucho Kids</strong></p>
+            </div>
+         </div>
+
+         <a href="#" id="hero-whatsapp-link" target="_blank"
+            class="bg-primary-container text-on-primary-container font-headline font-black text-xl px-10 py-5 dragon-glow hover:scale-105 active:scale-95 transition-all inline-block">
+            🚀 ¡UNIRSE AL VUELO!
+         </a>
+      </div>
+   </section>
+
+   <!-- ══════════════════════════════════════════
+        CUENTA REGRESIVA
+        ══════════════════════════════════════════ -->
+   <section class="py-24 px-6 relative overflow-hidden" id="countdown">
+      <!-- Personaje decorativo izquierda -->
+      <div class="absolute left-0 top-1/2 char-decoration block countdown-character">
+         <img src="img/2.png" alt=""
+            style="width:100%; object-fit:contain; filter: drop-shadow(0 0 20px rgba(74,222,128,0.2))" />
+      </div>
+
+      <div class="max-w-4xl mx-auto text-center">
+         <span class="font-label text-xs tracking-[0.2em] uppercase text-primary-container">⏳ El tiempo vuela...</span>
+         <h2 class="font-headline text-4xl md:text-5xl font-extrabold mt-3 mb-4 text-on-surface">¡Falta Poco!</h2>
+         <p class="text-on-surface-variant mb-12 text-lg" id="countdown-subtitle">
+            Domingo 19 de Abril — 18:00 hs
+         </p>
+
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div class="countdown-box p-6 md:p-8 text-center" style="border-radius:10px" id="box-days">
+               <div class="text-5xl md:text-7xl font-black font-headline text-primary-container mb-2"
+                  id="cd-days">00</div>
+               <div class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Días</div>
+            </div>
+            <div class="countdown-box p-6 md:p-8 text-center" style="border-radius:10px" id="box-hours">
+               <div class="text-5xl md:text-7xl font-black font-headline text-primary-container mb-2"
+                  id="cd-hours">00</div>
+               <div class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Horas</div>
+            </div>
+            <div class="countdown-box p-6 md:p-8 text-center" style="border-radius:10px" id="box-mins">
+               <div class="text-5xl md:text-7xl font-black font-headline text-primary-container mb-2"
+                  id="cd-mins">00</div>
+               <div class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Minutos</div>
+            </div>
+            <div class="countdown-box p-6 md:p-8 text-center" style="border-radius:10px" id="box-secs">
+               <div class="text-5xl md:text-7xl font-black font-headline text-primary-container mb-2"
+                  id="cd-secs">00</div>
+               <div class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Segundos</div>
+            </div>
+         </div>
+
+         <p class="text-on-surface-variant text-sm font-label mt-10">
+            🐉 ¡Prepará tu dragón, la aventura está por comenzar!
+         </p>
+      </div>
+   </section>
+
+   <!-- ══════════════════════════════════════════
+        GALERÍA DE FOTOS — Carrusel
+        ══════════════════════════════════════════ -->
+   <section class="py-24 px-6 bg-surface-container-lowest" id="photos">
+      <div class="max-w-5xl mx-auto">
+         <!-- Encabezado -->
+         <div class="text-center mb-12">
+            <span class="font-label text-xs tracking-[0.2em] uppercase text-primary-container">📸 Sus momentos</span>
+            <h2 class="font-headline text-4xl md:text-5xl font-extrabold mt-2 mb-3 text-on-surface"
+               id="photos-title">Galería de Gio</h2>
+            <p class="text-on-surface-variant">Momentos del joven jinete de dragones</p>
+         </div>
+
+         <!-- Carrusel -->
+         <div class="relative overflow-hidden border border-outline-variant/20 shadow-2xl"
+            style="border-radius:10px" id="carousel-container">
+            <div class="carousel-track" id="carousel-track"></div>
+
+            <!-- Botones prev / next -->
+            <button id="carousel-prev" aria-label="Anterior"
+               class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center bg-zinc-950/80 text-primary-container border border-outline-variant/30 hover:bg-primary-container hover:text-on-primary-container transition-all z-10"
+               style="border-radius:6px">
+               <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button id="carousel-next" aria-label="Siguiente"
+               class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center bg-zinc-950/80 text-primary-container border border-outline-variant/30 hover:bg-primary-container hover:text-on-primary-container transition-all z-10"
+               style="border-radius:6px">
+               <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+
+            <!-- Indicadores (dots) -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10"
+               id="carousel-dots"></div>
+         </div>
+
+         <!-- Etiqueta -->
+         <div class="mt-5 text-center">
+            <span class="font-label text-primary-container text-xs tracking-widest uppercase">
+               JINETE DE DRAGONE — GIO
+            </span>
+            <br>
+            <span class="font-label text-primary-container text-xs tracking-widest uppercase">
+               DRAGÓN — CHIMUELO
+            </span>
+         </div>
+      </div>
+   </section>
+
+   <!-- ══════════════════════════════════════════
+        MAPA Y UBICACIÓN
+        ══════════════════════════════════════════ -->
+   <section class="py-24 px-6 relative overflow-hidden" id="map">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-container/5 blur-[120px] rounded-full"></div>
+
+      <div class="max-w-7xl mx-auto">
+         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Columna de información -->
+            <div class="relative">
+               <!-- Personaje decorativo -->
+               <div class="absolute -right-4 char-decoration block map-character">
+                  <img src="img/3.png" alt=""
+                     style="width:100%; object-fit:contain; filter: drop-shadow(0 0 15px rgba(74,222,128,0.85))" />
+               </div>
+
+               <span class="font-label text-xs tracking-[0.2em] uppercase text-primary-container">📍 ¿Dónde es?</span>
+               <h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-8 mt-2">El Santuario del Dragón</h2>
+               <h2 class="font-headline text-4xl md:text-4xl font-extrabold mb-8 mt-1" style="text-align: center;">Javucho Kids</h2>
+
+               <div class="space-y-8">
+                  <div class="flex gap-6">
+                     <div
+                        class="flex-shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center text-primary-container"
+                        style="border-radius:8px">
+                        <span class="material-symbols-outlined">location_on</span>
+                     </div>
+                     <div>
+                        <h4 class="font-headline font-bold text-xl mb-1">Dirección</h4>
+                        <p class="text-on-surface-variant leading-relaxed" id="map-address">
+                           El Gran Salón — Dirección aquí
+                        </p>
+                     </div>
+                  </div>
+                  <div class="flex gap-6">
+                     <div
+                        class="flex-shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center text-primary-container"
+                        style="border-radius:8px">
+                        <span class="material-symbols-outlined">directions_run</span>
+                     </div>
+                     <div>
+                        <h4 class="font-headline font-bold text-xl mb-1">Cómo llegar</h4>
+                        <p class="text-on-surface-variant leading-relaxed" id="map-directions">
+                           Seguí los carteles del dragón hasta la entrada principal.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+
+               <a href="#" id="open-maps" target="_blank" rel="noopener noreferrer"
+                  class="mt-10 inline-flex items-center gap-3 text-primary-container font-headline font-bold hover:gap-5 transition-all group">
+                  ABRIR EN GOOGLE MAPS
+                  <span
+                     class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+               </a>
+            </div>
+
+            <!-- Mapa -->
+            <div class="relative">
+               <div id="map-wrapper"
+                  class="w-full bg-surface-container-highest overflow-hidden border border-outline-variant/20 shadow-2xl"
+                  style="aspect-ratio:16/9; border-radius:10px; position:relative;">
+                  <!-- Placeholder mientras no se configura el mapa -->
+                  <div id="map-placeholder"
+                     class="w-full h-full flex flex-col items-center justify-center text-on-surface-variant gap-4 p-8">
+                     <span class="material-symbols-outlined text-5xl text-primary-container"
+                        style="font-variation-settings: 'FILL' 1">map</span>
+                     <p class="font-label text-sm tracking-wider">MAPA NO CONFIGURADO</p>
+                     <p class="text-xs text-center">
+                        Configurá <code
+                           class="bg-surface-container-high px-1 py-0.5 rounded">window.__MAP_EMBED</code>
+                        con el <em>src</em> del iframe de Google Maps
+                     </p>
+                  </div>
+               </div>
+               <div class="absolute -bottom-3 -right-3 w-24 h-24 bg-primary-container/10 rounded-full blur-2xl">
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- ══════════════════════════════════════════
+        REGALOS
+        ══════════════════════════════════════════ -->
+   <!--
+   <section class="py-24 px-6 bg-surface-container" id="gifts">
+      <div class="max-w-4xl mx-auto text-center">
+         <span class="material-symbols-outlined text-6xl text-primary-container mb-4 block"
+            style="font-variation-settings: 'FILL' 1">redeem</span>
+         <span class="font-label text-xs tracking-[0.2em] uppercase text-primary-container">🏆 Tesoro del Dragón</span>
+         <h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-8 mt-2">Regalos</h2>
+
+         <div class="bg-surface-container-lowest p-8 md:p-12 glass-obsidian border border-outline-variant/10 relative mb-6"
+            style="border-radius:6px">
+            <div
+               class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 bg-primary-container text-on-primary-container font-label text-xs tracking-widest py-1 whitespace-nowrap">
+               DIRECTIVA DE MISIÓN
+            </div>
+            <p class="font-body text-xl text-on-surface-variant leading-relaxed">
+               ¡Tu presencia es nuestro mayor regalo! Volar desde las islas para celebrar con Gio es todo lo que
+               pedimos. 🐉
+               <br /><br />
+               <span class="text-on-surface italic">"Pero si querés traer un pequeño tributo al tesoro, una
+                  contribución al entrenamiento de Gio sería muy bienvenida."</span>
+            </p>
+         </div>
+
+         <div class="bg-surface-container-lowest p-8 glass-obsidian border border-outline-variant/10 relative max-w-lg mx-auto mb-10 text-left"
+            style="border-radius:6px">
+            <div
+               class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 bg-secondary-container text-on-secondary-container font-label text-xs tracking-widest py-1 whitespace-nowrap">
+               INFO PARA TRANSFERENCIA
+            </div>
+            <pre id="gift-info"
+               class="font-label text-sm text-on-surface-variant whitespace-pre-wrap leading-relaxed mt-2">CBU: -----
+Alias: -----
+Titular: -----
+Banco: -----</pre>
+         </div>
+
+         <div class="flex flex-wrap justify-center gap-4">
+            <div
+               class="flex items-center gap-2 px-6 py-3 bg-surface-container-highest font-label text-sm text-on-surface-variant border border-outline-variant/10">
+               🧱 LEGO DRAGONES
+            </div>
+            <div
+               class="flex items-center gap-2 px-6 py-3 bg-surface-container-highest font-label text-sm text-on-surface-variant border border-outline-variant/10">
+               📚 CUENTOS VIKINGOS
+            </div>
+            <div
+               class="flex items-center gap-2 px-6 py-3 bg-surface-container-highest font-label text-sm text-on-surface-variant border border-outline-variant/10">
+               💰 FONDO DE ENTRENAMIENTO
+            </div>
+         </div>
+      </div>
+   </section>
+   -->
+
+   <!-- ══════════════════════════════════════════
+        CONFIRMAR ASISTENCIA
+        ══════════════════════════════════════════ -->
+   <section class="py-24 px-6 bg-surface-container" id="rsvp">
+      <div class="max-w-4xl mx-auto text-center">
+         <span class="material-symbols-outlined text-6xl text-primary-container mb-4 block"
+            style="font-variation-settings: 'FILL' 1">campaign</span>
+         <span class="font-label text-xs tracking-[0.2em] uppercase text-primary-container">📯 Llamado de Berk</span>
+         <h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-6 mt-2">Confirmar asistencia</h2>
+         <div class="bg-surface-container-lowest p-8 md:p-12 glass-obsidian border border-outline-variant/10 relative"
+            style="border-radius:6px">
+            <div
+               class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 bg-primary-container text-on-primary-container font-label text-xs tracking-widest py-1 whitespace-nowrap">
+               MENSAJE AL JEFE DE LA ALDEA
+            </div>
+            <p class="font-body text-xl text-on-surface-variant leading-relaxed mb-8">
+               Para preparar el banquete, entrenar a los dragones y dejar todo listo para la gran aventura,
+               necesitamos saber si vas a formar parte de esta misión.
+               <br /><br />
+               <span class="text-on-surface italic">Mandanos tu confirmación por WhatsApp y reservá tu lugar en el vuelo de Giovanni.</span>
+            </p>
+            <a href="#" id="rsvp-whatsapp-link" target="_blank"
+               class="bg-primary-container text-on-primary-container font-headline font-black text-xl px-10 py-5 dragon-glow hover:scale-105 active:scale-95 transition-all inline-block">
+               💬 CONFIRMAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+   </section>
+
+   <!-- ══════════════════════════════════════════
+        FOOTER
+        ══════════════════════════════════════════ -->
+   <footer
+      class="w-full py-12 px-6 bg-zinc-950 border-t border-zinc-800 flex flex-col items-center gap-4 text-center">
+      <div class="text-lg font-bold text-zinc-500 font-headline" id="footer-title">🐉 Cumpleaños de Giovanni — 6
+         Años</div>
+      <p class="font-body text-sm text-zinc-500" id="footer-copy">
+         © 2026 La Isla de Berk — La Aventura del 6° Cumpleaños de Giovanni
+      </p>
+      <div class="flex gap-6 mt-2">
+         <a class="text-zinc-500 hover:text-green-300 transition-colors font-body text-sm" href="#">Política de
+            Privacidad</a>
+         <a class="text-zinc-500 hover:text-green-300 transition-colors font-body text-sm" href="#">Contactar al
+            Jefe</a>
+      </div>
+      <div class="mt-6 flex gap-2">
+         <div class="w-8 h-1 bg-primary-container/20"></div>
+         <div class="w-8 h-1 bg-primary-container/50"></div>
+         <div class="w-8 h-1 bg-primary-container"></div>
+         <div class="w-8 h-1 bg-primary-container/50"></div>
+         <div class="w-8 h-1 bg-primary-container/20"></div>
+      </div>
+   </footer>
+
+   <!-- ══════════════════════════════════════════
+        SCRIPTS
+        ══════════════════════════════════════════ -->
+   <script>
+      // ── Menú mobile ──────────────────────────────────────────────
+      function closeMobileMenu() {
+         document.getElementById('mobile-menu').classList.add('hidden');
+      }
+      document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+         document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+
+      // ── Aplicar variables de configuración al DOM ─────────────────
+      (function applyConfig() {
+         const name = window.__HOST_NAME || 'Giovanni';
+         const age  = window.__AGE      || '6';
+
+         document.title = 'Cumpleaños de ' + name + ' — ' + age + ' Años';
+
+         const setText = function (id, val) {
+            var el = document.getElementById(id);
+            if (el) el.textContent = val;
+         };
+
+         const setHref = function (id, val) {
+            var el = document.getElementById(id);
+            if (el && val) el.href = val;
+         };
+
+         setText('nav-title',        '🐉 Cumple de ' + name);
+         setText('hero-name',        name.toUpperCase());
+         setText('card-date',        window.__EVENT_DATE_TEXT  || 'Sábado, 26 de Oct');
+         setText('card-time',        window.__EVENT_TIME       || '14:00 — 18:00 hs');
+         setText('card-address',     (window.__EVENT_ADDRESS   || 'El Gran Salón').split('—')[0].trim());
+         setText('countdown-subtitle',
+            (window.__EVENT_DATE_TEXT || 'Sábado 26 de Octubre') +
+            (window.__EVENT_TIME ? ' — ' + window.__EVENT_TIME : ''));
+         setText('map-address',      window.__EVENT_ADDRESS    || 'El Gran Salón — Dirección aquí');
+         setText('map-directions',   window.__EVENT_DIRECTIONS || 'Seguí los carteles del dragón hasta la entrada principal.');
+         setText('footer-title',     '🐉 Cumpleaños de ' + name + ' — ' + age + ' Años');
+         setText('footer-copy',      '© ' + new Date().getFullYear() + ' La Isla de Berk — La Aventura del ' + age + '° Cumpleaños de ' + name);
+         setText('photos-title',     'Galería de ' + name.charAt(0).toUpperCase() + name.slice(1).toLowerCase());
+         setText('photo-age',        age);
+         setHref('hero-whatsapp-link', window.__WHATSAPP_LINK || '#');
+         setHref('nav-whatsapp-link',  window.__WHATSAPP_LINK || '#');
+         setHref('rsvp-whatsapp-link', window.__WHATSAPP_LINK || '#');
+
+         var giftEl = document.getElementById('gift-info');
+         if (giftEl) giftEl.textContent = window.__GIFT_INFO || 'CBU: -----\nAlias: -----\nTitular: -----\nBanco: -----';
+
+         var musicEnabled = !!window.__ENABLE_MUSIC && !!(window.__MUSIC_URL || '').trim();
+         var musicBtn = document.getElementById('music-btn');
+         var musicHint = document.getElementById('music-hint');
+         if (!musicEnabled) {
+            if (musicBtn) musicBtn.style.display = 'none';
+            if (musicHint) musicHint.style.display = 'none';
+         }
+      })();
+
+      // ── Cuenta Regresiva ──────────────────────────────────────────
+      (function startCountdown() {
+         var target = new Date(window.__EVENT_DATE || '2026-10-26T14:00:00');
+         var pad    = function (n) { return String(n).padStart(2, '0'); };
+         var prev   = { d: -1, h: -1, m: -1, s: -1 };
+
+         function tick(boxId) {
+            var box = document.getElementById(boxId);
+            if (!box) return;
+            box.classList.remove('tick');
+            void box.offsetWidth; // reflow para reiniciar animación
+            box.classList.add('tick');
+         }
+
+         function update() {
+            var now  = new Date();
+            var diff = target - now;
+            if (diff <= 0) {
+               ['cd-days', 'cd-hours', 'cd-mins', 'cd-secs'].forEach(function (id) {
+                  document.getElementById(id).textContent = '00';
+               });
+               return;
+            }
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000)  / 60000);
+            var s = Math.floor((diff % 60000)    / 1000);
+
+            if (d !== prev.d) { document.getElementById('cd-days').textContent  = pad(d); tick('box-days');  }
+            if (h !== prev.h) { document.getElementById('cd-hours').textContent = pad(h); tick('box-hours'); }
+            if (m !== prev.m) { document.getElementById('cd-mins').textContent  = pad(m); tick('box-mins');  }
+            if (s !== prev.s) { document.getElementById('cd-secs').textContent  = pad(s); tick('box-secs');  }
+
+            prev = { d: d, h: h, m: m, s: s };
+         }
+         update();
+         setInterval(update, 1000);
+      })();
+
+      // ── Carrusel de Fotos ─────────────────────────────────────────
+      (function initCarousel() {
+         var rawPhotos = window.__PHOTOS;
+         var photos    = (Array.isArray(rawPhotos) && rawPhotos.length > 0)
+            ? rawPhotos
+            : [
+               { src: 'img/1.png', orientation: 'vertical' },
+               { src: 'img/2.png', orientation: 'vertical' },
+               { src: 'img/3.png', orientation: 'vertical' }
+            ];
+
+         var track     = document.getElementById('carousel-track');
+         var dotsEl    = document.getElementById('carousel-dots');
+         var current   = 0;
+         var autoTimer = null;
+
+         photos = photos.map(function (photo) {
+            if (typeof photo === 'string') return { src: photo, orientation: 'horizontal' };
+            return {
+               src: photo && photo.src ? photo.src : '',
+               orientation: photo && photo.orientation === 'vertical' ? 'vertical' : 'horizontal'
+            };
+         }).filter(function (photo) {
+            return !!photo.src;
+         });
+
+         // Construir slides
+         photos.forEach(function (photo, i) {
+            var slide = document.createElement('div');
+            slide.className = 'carousel-slide';
+
+            var media = document.createElement('div');
+            media.className = 'carousel-media carousel-media--' + photo.orientation;
+
+            var img = document.createElement('img');
+            img.alt   = 'Foto ' + (i + 1) + ' de ' + (window.__HOST_NAME || 'Giovanni');
+            img.src   = photo.src;
+            img.addEventListener('error', function () {
+               media.innerHTML =
+                  '<div style="min-height:320px; width:100%; display:flex; align-items:center; justify-content:center;' +
+                  'background:#162619; color:#8db895; font-family:\'Space Grotesk\',sans-serif; font-size:14px;">' +
+                  '📸 Foto ' + (i + 1) + '</div>';
+            });
+            media.appendChild(img);
+            slide.appendChild(media);
+            track.appendChild(slide);
+
+            // Dot indicador
+            var dot = document.createElement('button');
+            dot.setAttribute('aria-label', 'Foto ' + (i + 1));
+            dot.style.cssText = 'border:none; cursor:pointer; padding:0; height:8px; border-radius:999px; transition: all .3s;';
+            dot.style.width   = i === 0 ? '24px' : '8px';
+            dot.style.background = i === 0 ? '#4ade80' : '#52525b';
+            dot.addEventListener('click', function () { goTo(i); resetAuto(); });
+            dotsEl.appendChild(dot);
+         });
+
+         function goTo(idx) {
+            current = (idx + photos.length) % photos.length;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            Array.from(dotsEl.children).forEach(function (d, i) {
+               d.style.width      = i === current ? '24px' : '8px';
+               d.style.background = i === current ? '#4ade80' : '#52525b';
+            });
+         }
+
+         document.getElementById('carousel-prev').addEventListener('click', function () { goTo(current - 1); resetAuto(); });
+         document.getElementById('carousel-next').addEventListener('click', function () { goTo(current + 1); resetAuto(); });
+
+         function resetAuto() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(function () { goTo(current + 1); }, 4500);
+         }
+         resetAuto();
+
+         // Soporte swipe táctil
+         var touchStartX = 0;
+         var container   = document.getElementById('carousel-container');
+         container.addEventListener('touchstart', function (e) {
+            touchStartX = e.touches[0].clientX;
+         }, { passive: true });
+         container.addEventListener('touchend', function (e) {
+            var dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 50) { dx < 0 ? goTo(current + 1) : goTo(current - 1); resetAuto(); }
+         }, { passive: true });
+      })();
+
+      // ── Google Maps ───────────────────────────────────────────────
+      (function initMap() {
+         try {
+            var embed   = (window.__MAP_EMBED || '').trim();
+            var mapLink = (window.__MAP_LINK  || 'https://maps.google.com').trim();
+            var openBtn = document.getElementById('open-maps');
+
+            if (openBtn) openBtn.href = mapLink;
+
+            if (embed) {
+               var wrapper     = document.getElementById('map-wrapper');
+               var placeholder = document.getElementById('map-placeholder');
+               if (placeholder) placeholder.style.display = 'none';
+
+               var iframe = document.createElement('iframe');
+               iframe.setAttribute('src',              embed);
+               iframe.setAttribute('width',            '100%');
+               iframe.setAttribute('height',           '100%');
+               iframe.setAttribute('style',            'border:0; position:absolute; inset:0;');
+               iframe.setAttribute('allowfullscreen',  '');
+               iframe.setAttribute('loading',          'lazy');
+               iframe.setAttribute('referrerpolicy',   'no-referrer-when-downgrade');
+               iframe.setAttribute('title',            'Ubicación del evento');
+               wrapper.appendChild(iframe);
+            }
+         } catch (e) { console.warn('Error inicializando mapa', e); }
+      })();
+
+      // ── Reproductor de YouTube ────────────────────────────────────
+      var ytPlayer = null, ytReady = false;
+      var _ytReadyResolver = null, _playerInitScrollY = null;
+
+      function parseYouTubeId(url) {
+         if (!url) return null;
+         var patterns = [/v=([^&]+)/, /youtu\.be\/([^?&]+)/, /embed\/([^?&]+)/, /\/v\/([^?&]+)/];
+         for (var i = 0; i < patterns.length; i++) {
+            var m = url.match(patterns[i]);
+            if (m && m[1]) return m[1];
+         }
+         if (/^[a-zA-Z0-9_-]{11}$/.test(url)) return url;
+         return null;
+      }
+
+      function loadYouTubeAPI() {
+         if (window.YT && window.YT.Player) return Promise.resolve();
+         return new Promise(function (res) {
+            var tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            document.body.appendChild(tag);
+            window.onYouTubeIframeAPIReady = function () { ytReady = true; res(); };
+         });
+      }
+
+      function createPlayer(videoId, tryPlay) {
+         if (!ytReady) return Promise.resolve(null);
+         var container = document.getElementById('player-container');
+         container.innerHTML = '<div id="ytplayer"></div>';
+         var autoplayMute    = !!window.__AUTOPLAY_MUTED;
+         var readyPromise    = new Promise(function (resolve) { _ytReadyResolver = resolve; });
+
+         ytPlayer = new YT.Player('ytplayer', {
+            height: '0', width: '0', videoId: videoId,
+            playerVars: { playsinline: 1, autoplay: autoplayMute ? 1 : 0, rel: 0 },
+            events: {
+               onReady: function (ev) {
+                  try {
+                     if (autoplayMute) ev.target.mute();
+                     if (autoplayMute || tryPlay) ev.target.playVideo();
+                     var iframeEl = container.querySelector('iframe');
+                     if (iframeEl) {
+                        iframeEl.setAttribute('tabindex', '-1');
+                        iframeEl.setAttribute('aria-hidden', 'true');
+                        iframeEl.style.cssText = 'position:fixed;left:-9999px;top:0;width:1px;height:1px';
+                     }
+                     try { if (_playerInitScrollY !== null) { window.scrollTo(0, _playerInitScrollY); _playerInitScrollY = null; } } catch (e) { }
+                     if (_ytReadyResolver) { _ytReadyResolver(ytPlayer); _ytReadyResolver = null; }
+                  } catch (e) { }
+                  try { document.activeElement && document.activeElement.blur(); } catch (e) { }
+               },
+               onStateChange: function (ev) {
+                  try {
+                     var btn = document.getElementById('music-btn');
+                     var s   = ev.data;
+                     if (s === 1) { btn && btn.classList.add('active');    if (btn) btn.textContent = '⏸'; }
+                     else if (s === 2 || s === 0) { btn && btn.classList.remove('active'); if (btn) btn.textContent = '♪'; }
+                  } catch (e) { }
+               }
+            }
+         });
+         return readyPromise;
+      }
+
+      async function ensurePlayer() {
+         if (!ytPlayer) {
+            var raw = (window.__MUSIC_URL || '').trim();
+            if (!raw) return null;
+            var id  = parseYouTubeId(raw);
+            if (!id) return null;
+            _playerInitScrollY = window.scrollY;
+            await loadYouTubeAPI();
+            try { await createPlayer(id, !!window.__AUTOPLAY_MUTED); } catch (e) { }
+         }
+         return ytPlayer;
+      }
+
+      // Hint de música si está configurada
+      (function showMusicHint() {
+         try {
+            if (window.__ENABLE_MUSIC && (window.__MUSIC_URL || '').trim()) {
+               var hint = document.getElementById('music-hint');
+               var btn  = document.getElementById('music-btn');
+               if (hint) hint.classList.add('show');
+               if (btn)  btn.classList.add('pulse');
+               setTimeout(function () {
+                  if (hint) hint.classList.remove('show');
+                  if (btn)  btn.classList.remove('pulse');
+               }, 9000);
+            }
+         } catch (e) { }
+      })();
+
+      document.getElementById('music-btn').addEventListener('click', async function () {
+         try {
+            if (!window.__ENABLE_MUSIC) return;
+            var hint = document.getElementById('music-hint');
+            if (hint) hint.classList.remove('show');
+            var player = await ensurePlayer();
+            var btn    = document.getElementById('music-btn');
+            if (!player) return;
+            var state   = player.getPlayerState && player.getPlayerState();
+            var isMuted = typeof player.isMuted === 'function' ? player.isMuted() : false;
+            if (isMuted) {
+               try { player.unMute(); } catch (e) { }
+               try { player.playVideo(); } catch (e) { }
+               if (btn) { btn.classList.add('active'); btn.textContent = '⏸'; }
+               return;
+            }
+            if (state === 1) {
+               try { player.pauseVideo(); } catch (e) { }
+               if (btn) { btn.classList.remove('active'); btn.textContent = '♪'; }
+            } else {
+               try { player.playVideo(); } catch (e) { }
+               if (btn) { btn.classList.add('active'); btn.textContent = '⏸'; }
+            }
+            try { if (_playerInitScrollY !== null) { window.scrollTo(0, _playerInitScrollY); _playerInitScrollY = null; } } catch (e) { }
+         } catch (e) { console.warn(e); }
+      });
+
+      document.getElementById('music-btn').addEventListener('keydown', function (e) {
+         if (e.key === 'Enter') document.getElementById('music-btn').click();
+      });
+   </script>
+
+</body>
+
+</html>
